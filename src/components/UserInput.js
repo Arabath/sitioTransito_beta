@@ -1,5 +1,9 @@
+import { useState } from 'react';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function UserInput({setDocumento, documento}) {
+	const [show, setShow] = useState(true)
     const formSend = (e) => {
         e.preventDefault();
     };
@@ -16,8 +20,8 @@ export default function UserInput({setDocumento, documento}) {
 						placeholder='Ingrese su DNI*'
 						onChange={(e) => setDocumento(e.target.value)}
 					/>
-					<button className='btn btn-primary' id='enviar-turno' type='submit'>
-						CONTINUAR
+					<button onClick={() => setShow(!show)} className="toggle-btn">
+						<FontAwesomeIcon className='icon-search' icon={faSearch} />
 					</button>
 				</div>
 			</div>

@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Home from "./components/Home";
+import './Styles/styles.css'
+
 // import FetchMulta from "./API/FetchMulta";
 // import FetchCuotas from "./API/FetchCuotas";
 

@@ -8,8 +8,8 @@ export default function Home() {
 	return (
 		<div>
 			<div>
-				<div className='m-login__container'>
-					<div className='m-login__logo'>
+				<div className='login__container'>
+					<div className='login__logo'>
 						<img
 							src='https://mi.campana.gov.ar/Content/Images/logoLogin.svg'
 							alt='login-logo'>

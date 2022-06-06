@@ -1,0 +1,59 @@
+* {
+    padding: 5px;
+    margin: auto;
+}
+
+.login__logo {
+    margin: 12px auto;  
+    text-align: center;
+}
+.subtitle-section {
+    text-align: center;
+}
+
+.logo-subtitulo {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+}
+
+
+.form-component{
+    padding: 0;
+    margin: auto ;
+    width:325px;
+}
+
+.form-control {
+    display: flex;
+    width: 300px;
+    height: 34px;
+    border-radius: 5px;
+    border: 1px solid #cfcfcf;
+}
+
+.btn {
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+  
+.toggle-btn {
+    display: flex;
+    flex-direction: column;
+    margin: -46px 0px 12px auto; 
+    justify-content: flex-start;
+    border-radius: 5px;
+    width: 32px;
+    height: 46px;
+    border: 1px solid #d0d2d4;
+}
+
+html {
+    background: url(https://mi.campana.gov.ar/Content/metronic_v5.2/assets/app/media/img/bg/bg-3.jpg)
+      no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
