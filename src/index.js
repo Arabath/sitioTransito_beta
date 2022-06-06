@@ -1,17 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Home from "./components/Home";
-import './Styles/styles.css'
-
-// import FetchMulta from "./API/FetchMulta";
-// import FetchCuotas from "./API/FetchCuotas";
-
+import App from "./App";
+// import Accordion from '../src/components/Accordion'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <FetchCuotas /> */}
-    {/* <FetchMulta /> */}
-    <Home />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

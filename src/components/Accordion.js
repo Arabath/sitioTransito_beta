@@ -1,6 +1,6 @@
-import { faqs } from "../data";
+import { faqs } from "../components/data";
 import AccordionItem from "./AccordionItem";
-import './Styles/accordion.css'
+import '../Styles/accordion.css'
 
 const Accordion = () => {
   return (
