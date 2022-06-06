@@ -1,7 +1,12 @@
-* {
+/* * {
     padding: 5px;
     margin: auto;
+} */
+
+.App__wrapper {
+    padding: 100px;
 }
+
 
 .login__logo {
     margin: 12px auto;  
@@ -31,21 +36,19 @@
     border-radius: 5px;
     border: 1px solid #cfcfcf;
 }
-
-.btn {
-    margin-top: 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
   
+.icon-search {
+    margin: auto;
+}
+
 .toggle-btn {
     display: flex;
     flex-direction: column;
-    margin: -46px 0px 12px auto; 
+    margin: -38px 18px 12px auto; 
     justify-content: flex-start;
     border-radius: 5px;
-    width: 32px;
-    height: 46px;
+    width: 33px;
+    height: 38px;
     border: 1px solid #d0d2d4;
 }
 

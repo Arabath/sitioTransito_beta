@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Accordion from '../components/Accordion'
 
 export default function UserInput({setDocumento, documento}) {
 	const [show, setShow] = useState(true)
@@ -24,7 +25,7 @@ export default function UserInput({setDocumento, documento}) {
 						<FontAwesomeIcon className='icon-search' icon={faSearch} />
 					</button>
 					<div>
-						Componente tabla con acordion aquí
+						<Accordion />
 					</div>
 				</div>
 			</div>

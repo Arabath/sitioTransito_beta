@@ -7,8 +7,7 @@ export default function Home() {
 	const [documento, setDocumento] = useState('');
 
 	return (
-		<div>
-			<div>
+			<div className='App__wrapper'>
 				<div className='login__container'>
 					<div className='login__logo'>
 						<img
@@ -21,7 +20,6 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+			</div>	
 	);
 }

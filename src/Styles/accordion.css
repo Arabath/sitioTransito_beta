@@ -6,24 +6,21 @@
     color:#977481;
   }
   
-  .container {
-    max-width: 600px;
-    margin: 6rem auto 4rem;
-    padding: 0 10px;
-  }
-    
+
   .accordion {
+    position: absolute;
+    right: 250px;
+    justify-content: flex-start;
+    margin: auto;
     list-style: none;
+    width: 550px;
   }
   
-  /* .accordion_item {
-    border-top: 1px solid #9f9f9f;
-  } */
   
   .button {
     font-size: 16px;
     background-color: #ffffff;
-    color:#bdadc3;
+    color:#9f9ba0;
     text-align: left;
     font-weight: 300;
     display: flex;
@@ -34,12 +31,12 @@
     padding: 18px 8px;
     cursor: pointer;
     border-radius: 5px;
-    border: 1px solid #f6f7f9;
+    border: 1px solid #bebebe;
     transition-duration: 0.4s;
   }
   
   .button:hover {
-    background-color: #f4f5f8; 
+    background-color: #e6e6e6; 
   }
 
   .control {

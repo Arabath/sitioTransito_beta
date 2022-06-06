@@ -15,7 +15,7 @@ class FetchMulta extends React.Component {
 	// ComponentDidMount is used to
 	// execute the code
 	componentDidMount() {
-		fetch("http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/20468120179")
+		fetch("http://localhost:3001/deudores")
 			.then((res) => res.json())
 			.then((json) => {
 				this.setState({
