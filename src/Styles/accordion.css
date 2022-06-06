@@ -8,8 +8,8 @@
   
 
   .accordion {
-    position: absolute;
-    right: 250px;
+    position: relative;
+    right: 140px;
     justify-content: flex-start;
     margin: auto;
     list-style: none;

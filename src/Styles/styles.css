@@ -7,7 +7,6 @@
     padding: 100px;
 }
 
-
 .login__logo {
     margin: 12px auto;  
     text-align: center;
@@ -22,11 +21,10 @@
     font-weight: normal;
 }
 
-
 .form-component{
     padding: 0;
     margin: auto ;
-    width:325px;
+    width:300px;
 }
 
 .form-control {
@@ -44,7 +42,7 @@
 .toggle-btn {
     display: flex;
     flex-direction: column;
-    margin: -38px 18px 12px auto; 
+    margin: -38px -8px 12px auto; 
     justify-content: flex-start;
     border-radius: 5px;
     width: 33px;
