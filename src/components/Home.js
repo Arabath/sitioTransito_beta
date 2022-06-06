@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import UserInput from './UserInput';
+import '../Styles/styles.css';
 
 
 export default function Home() {

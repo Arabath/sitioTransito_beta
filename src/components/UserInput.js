@@ -23,6 +23,9 @@ export default function UserInput({setDocumento, documento}) {
 					<button onClick={() => setShow(!show)} className="toggle-btn">
 						<FontAwesomeIcon className='icon-search' icon={faSearch} />
 					</button>
+					<div>
+						Componente tabla con acordion aquí
+					</div>
 				</div>
 			</div>
         </form>

@@ -33,7 +33,7 @@ class FetchCuotas extends React.Component {
 		<div className = "FetchCuota">
 			<table>
 				<thead>
-					<tr>
+					<tr className="tabla-cuotas">
 						<th>Cuota</th>
 						<th>Periodo</th>
 						<th>Importe</th>

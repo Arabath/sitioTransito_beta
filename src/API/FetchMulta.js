@@ -33,7 +33,7 @@ class FetchMulta extends React.Component {
 		<div className = "FetchInf">
 			<table>
 				<thead>
-					<tr>
+					<tr className="tabla-deuda">
 						<th>Numero Acta</th>
 						<th>Numero Causa</th>
 						<th>Año Causa</th>
@@ -45,7 +45,7 @@ class FetchMulta extends React.Component {
 				<tbody>
 				{
 				items.map((item, index) => (
-				<tr key = { index } >
+				<tr className="tabla-content" key = { index } >
 					 <td>{ item.numeroActa }</td>
 					 <td>{ item.numeroCausa }</td>
 					 <td>{ item.añoCausa }</td>
