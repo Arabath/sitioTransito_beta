@@ -50,7 +50,7 @@
     border: 1px solid #d0d2d4;
 }
 
-html {
+body {
     background: url(https://mi.campana.gov.ar/Content/metronic_v5.2/assets/app/media/img/bg/bg-3.jpg)
       no-repeat center center fixed;
     -webkit-background-size: cover;

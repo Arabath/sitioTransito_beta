@@ -1,4 +1,5 @@
 import React from "react";
+import '../Styles/tables.css';
 
 class FetchCuotas extends React.Component {
 
@@ -39,8 +40,7 @@ class FetchCuotas extends React.Component {
 						<th>Importe</th>
 						<th>Recargo</th>
 						<th>Total</th>
-						<th>Estado</th>
-						<th>Vencimiento</th>
+						<th>Vto</th>
 					</tr>
 				</thead>
                 <tbody>
@@ -52,12 +52,20 @@ class FetchCuotas extends React.Component {
 					 <td>{ item.cuotas.importeOriginal }</td>
 					 <td>{ item.cuotas.recargo }</td>
 					 <td>{ item.cuotas.total }</td>
-					 <td>{ item.cuotas.estado }</td>
 					 <td>{ item.cuotas.vencimiento }</td>
 				</tr>
 				))
 				}
 				</tbody>
+				<div className="botonera">
+						<button className="btn-table-volver">Volver</button>
+						<button className="btn-table">E-mail</button>
+						<button className="btn-table">
+							{/* <FontAwesomeIcon icon="fa-solid fa-print" /> */}
+						Imprimir</button>
+
+						<button className="btn-table">Pagar</button>
+					</div>
 			</table>
 		</div>
 	);

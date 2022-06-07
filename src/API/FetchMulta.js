@@ -1,5 +1,7 @@
 import React from "react";
 
+import '../Styles/tables.css';
+
 class FetchMulta extends React.Component {
 
 	// Constructor
@@ -34,11 +36,10 @@ class FetchMulta extends React.Component {
 			<table>
 				<thead>
 					<tr className="tabla-deuda">
-						<th>Numero Acta</th>
-						<th>Numero Causa</th>
-						<th>Año Causa</th>
+						<th>N° Acta</th>
+						<th>Causa</th>
+						<th>Año</th>
 						<th>Dominio</th>
-						<th>Fecha</th>
 						<th>Importe</th>
 					</tr>
 				</thead>
@@ -50,11 +51,19 @@ class FetchMulta extends React.Component {
 					 <td>{ item.numeroCausa }</td>
 					 <td>{ item.añoCausa }</td>
 					 <td>{ item.dominio }</td>
-					 <td>{ item.fecha }</td>
 					 <td>{ item.importe }</td>
 				</tr>
 				))
 				}
+					<div className="botonera">
+						<button className="btn-table-volver">Volver</button>
+						<button className="btn-table">E-mail</button>
+						<button className="btn-table">
+							{/* <FontAwesomeIcon icon="fa-solid fa-print" /> */}
+						Imprimir</button>
+
+						<button className="btn-table">Pagar</button>
+					</div>
 				</tbody>
 			</table>
 		</div>
