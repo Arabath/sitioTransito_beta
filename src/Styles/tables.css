@@ -6,7 +6,7 @@
 }
 
 .FetchInf{
-   background-color:#f4f5f8;
+   background-color:#ffffff;
    font-family: poppins;
    font-size: 14px;
    color: rgb(141, 140, 140);
@@ -32,16 +32,18 @@ tbody tr:nth-child(even) {
 }
 
 .botonera {
+    padding: 8px;
     display: flex;
+    flex-direction: row;
     height: 40px;
     width: fit-content;
-    justify-content: space-evenly	;
 }
 .btn-table{
     background-color: #929ce9;
     border-radius: 4px;
     border: solid 1px #f4f5f8;
     color: #ffff;
+    transition-duration: 0.4s;
 }
 
 .btn-table-volver {
@@ -51,10 +53,6 @@ tbody tr:nth-child(even) {
     color: #cacaca;
 }
 
-.btn-table {
-    transition-duration: 0.4s;
-  }
-  
   .btn-table:hover {
     background-color: #aa5fff; /* Green */
     color: white;
@@ -63,3 +61,7 @@ tbody tr:nth-child(even) {
     background-color: #949494; /* Green */
     color: white;
   }
+
+.tabla-deuda {
+    background-color:#ececec;
+}

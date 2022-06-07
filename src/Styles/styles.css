@@ -1,14 +1,9 @@
-/* * {
-    padding: 5px;
-    margin: auto;
-} */
-
 .App__wrapper {
     padding: 100px;
 }
 
 .login__logo {
-    margin: 12px auto;  
+    margin: auto;  
     text-align: center;
 }
 .subtitle-section {

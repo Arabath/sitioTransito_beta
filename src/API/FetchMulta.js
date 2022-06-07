@@ -1,5 +1,6 @@
 import React from "react";
-
+import { faPrint, faEnvelope, faMoneyBill, faBackward } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../Styles/tables.css';
 
 class FetchMulta extends React.Component {
@@ -17,7 +18,7 @@ class FetchMulta extends React.Component {
 	// ComponentDidMount is used to
 	// execute the code
 	componentDidMount() {
-		fetch("http://localhost:3001/deudores")
+		fetch("http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/20468120179")
 			.then((res) => res.json())
 			.then((json) => {
 				this.setState({
@@ -36,9 +37,9 @@ class FetchMulta extends React.Component {
 			<table>
 				<thead>
 					<tr className="tabla-deuda">
-						<th>N° Acta</th>
 						<th>Causa</th>
 						<th>Año</th>
+						<th>Acta</th>
 						<th>Dominio</th>
 						<th>Importe</th>
 					</tr>
@@ -47,22 +48,30 @@ class FetchMulta extends React.Component {
 				{
 				items.map((item, index) => (
 				<tr className="tabla-content" key = { index } >
-					 <td>{ item.numeroActa }</td>
 					 <td>{ item.numeroCausa }</td>
 					 <td>{ item.añoCausa }</td>
+					 <td>{ item.numeroActa }</td>
 					 <td>{ item.dominio }</td>
 					 <td>{ item.importe }</td>
 				</tr>
 				))
 				}
 					<div className="botonera">
-						<button className="btn-table-volver">Volver</button>
-						<button className="btn-table">E-mail</button>
-						<button className="btn-table">
-							{/* <FontAwesomeIcon icon="fa-solid fa-print" /> */}
-						Imprimir</button>
+						<button className="btn-table-volver">
+							<FontAwesomeIcon className="email-icon" icon={faBackward}/>Volver
+						</button>
 
-						<button className="btn-table">Pagar</button>
+						<button className="btn-table">
+							<FontAwesomeIcon className="email-icon" icon={faEnvelope}/>E-mail
+						</button>
+
+						<button className="btn-table">
+							<FontAwesomeIcon className="print-icon" icon={faPrint}/>Imprimir
+						</button>
+
+						<button className="btn-table">
+							<FontAwesomeIcon className="pay-icon" icon={faMoneyBill}/>Pagar
+						</button>
 					</div>
 				</tbody>
 			</table>

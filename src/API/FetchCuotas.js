@@ -1,6 +1,7 @@
 import React from "react";
 import '../Styles/tables.css';
-
+import { faPrint, faEnvelope, faMoneyBill, faBackward } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class FetchCuotas extends React.Component {
 
 	// Constructor
@@ -58,13 +59,21 @@ class FetchCuotas extends React.Component {
 				}
 				</tbody>
 				<div className="botonera">
-						<button className="btn-table-volver">Volver</button>
-						<button className="btn-table">E-mail</button>
-						<button className="btn-table">
-							{/* <FontAwesomeIcon icon="fa-solid fa-print" /> */}
-						Imprimir</button>
+						<button className="btn-table-volver">
+							<FontAwesomeIcon className="email-icon" icon={faBackward}/>Volver
+						</button>
 
-						<button className="btn-table">Pagar</button>
+						<button className="btn-table">
+							<FontAwesomeIcon className="email-icon" icon={faEnvelope}/>E-mail
+						</button>
+
+						<button className="btn-table">
+							<FontAwesomeIcon className="print-icon" icon={faPrint}/>Imprimir
+						</button>
+
+						<button className="btn-table">
+							<FontAwesomeIcon className="pay-icon" icon={faMoneyBill}/>Pagar
+						</button>
 					</div>
 			</table>
 		</div>
