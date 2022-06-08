@@ -29,13 +29,16 @@ class FetchCuotas extends React.Component {
 	render() {
 		const { DataisLoaded, items } = this.state;
 		if (!DataisLoaded) return <div>
-			<h1> Pleses wait some time.... </h1> </div> ;
+			<h1> Loading... </h1> </div> ;
 
 		return (
 		<div className = "FetchCuota">
 			<table>
 				<thead>
 					<tr className="tabla-cuotas">
+						<th>
+							<input type="checkbox"></input>
+						</th>
 						<th>Cuota</th>
 						<th>Periodo</th>
 						<th>Importe</th>
@@ -48,34 +51,37 @@ class FetchCuotas extends React.Component {
 				{
 				items.map((item, index) => (
 				<tr key = { index } >
-					 <td>{ item.cuotas.cuota }</td>
-					 <td>{ item.cuotas.periodo }</td>
-					 <td>{ item.cuotas.importeOriginal }</td>
-					 <td>{ item.cuotas.recargo }</td>
-					 <td>{ item.cuotas.total }</td>
-					 <td>{ item.cuotas.vencimiento }</td>
+					<th>
+						 <input type="checkbox"></input>
+					</th>	
+					<td>{ item.cuotas.cuota }</td>
+					<td>{ item.cuotas.periodo }</td>
+					<td>{ item.cuotas.importeOriginal }</td>
+					<td>{ item.cuotas.recargo }</td>
+					<td>{ item.cuotas.total }</td>
+					<td>{ item.cuotas.vencimiento }</td>
 				</tr>
 				))
 				}
 				</tbody>
-				<div className="botonera">
-						<button className="btn-table-volver">
-							<FontAwesomeIcon className="email-icon" icon={faBackward}/>Volver
-						</button>
-
-						<button className="btn-table">
-							<FontAwesomeIcon className="email-icon" icon={faEnvelope}/>E-mail
-						</button>
-
-						<button className="btn-table">
-							<FontAwesomeIcon className="print-icon" icon={faPrint}/>Imprimir
-						</button>
-
-						<button className="btn-table">
-							<FontAwesomeIcon className="pay-icon" icon={faMoneyBill}/>Pagar
-						</button>
-					</div>
 			</table>
+				<div className="botonera">
+					<button className="btn-table-volver">
+						<FontAwesomeIcon className="email-icon" icon={faBackward}/> Volver
+					</button>
+
+					<button className="btn-table">
+						<FontAwesomeIcon className="email-icon" icon={faEnvelope}/> E-mail
+					</button>
+
+					<button className="btn-table">
+						<FontAwesomeIcon className="print-icon" icon={faPrint}/> Imprimir
+					</button>
+
+					<button className="btn-table">
+						<FontAwesomeIcon className="pay-icon" icon={faMoneyBill}/> Pagar
+					</button>
+				</div>
 		</div>
 	);
 }

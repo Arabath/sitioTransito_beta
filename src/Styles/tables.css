@@ -1,11 +1,4 @@
-.FetchCuota {
-    background-color: #ececec;
-    font-family: poppins;
-    color: rgb(141, 140, 140);
-    border-radius: 5px;
-}
-
-.FetchInf{
+.FetchInf, .FetchCuota {
    background-color:#ffffff;
    font-family: poppins;
    font-size: 14px;
@@ -35,11 +28,14 @@ tbody tr:nth-child(even) {
     padding: 8px;
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     height: 40px;
     width: fit-content;
 }
+
 .btn-table{
     background-color: #929ce9;
+    width: 80px;
     border-radius: 4px;
     border: solid 1px #f4f5f8;
     color: #ffff;
@@ -53,15 +49,16 @@ tbody tr:nth-child(even) {
     color: #cacaca;
 }
 
-  .btn-table:hover {
-    background-color: #aa5fff; /* Green */
-    color: white;
-  }
-  .btn-table-volver:hover {
-    background-color: #949494; /* Green */
-    color: white;
-  }
+.btn-table-volver:hover {
+  background-color: #949494; 
+  color: white;
+}
 
-.tabla-deuda {
+.btn-table:hover {
+    background-color: #aa5fff; 
+    color: white;
+}
+
+.tabla-deuda, .tabla-cuotas {
     background-color:#ececec;
 }

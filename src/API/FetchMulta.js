@@ -30,13 +30,16 @@ class FetchMulta extends React.Component {
 	render() {
 		const { DataisLoaded, items } = this.state;
 		if (!DataisLoaded) return <div>
-			<h1> Pleses wait some time.... </h1> </div> ;
+			<h1> Loading... </h1> </div> ;
 
 		return (
 		<div className = "FetchInf">
 			<table>
 				<thead>
 					<tr className="tabla-deuda">
+						<th>
+							<input type="checkbox"></input>
+						</th>
 						<th>Causa</th>
 						<th>Año</th>
 						<th>Acta</th>
@@ -48,33 +51,36 @@ class FetchMulta extends React.Component {
 				{
 				items.map((item, index) => (
 				<tr className="tabla-content" key = { index } >
+					 <th>
+						 <input type="checkbox"></input>
+					 </th>	
 					 <td>{ item.numeroCausa }</td>
 					 <td>{ item.añoCausa }</td>
 					 <td>{ item.numeroActa }</td>
 					 <td>{ item.dominio }</td>
-					 <td>{ item.importe }</td>
+					 <td>${ item.importe }</td>
 				</tr>
 				))
 				}
-					<div className="botonera">
-						<button className="btn-table-volver">
-							<FontAwesomeIcon className="email-icon" icon={faBackward}/>Volver
-						</button>
-
-						<button className="btn-table">
-							<FontAwesomeIcon className="email-icon" icon={faEnvelope}/>E-mail
-						</button>
-
-						<button className="btn-table">
-							<FontAwesomeIcon className="print-icon" icon={faPrint}/>Imprimir
-						</button>
-
-						<button className="btn-table">
-							<FontAwesomeIcon className="pay-icon" icon={faMoneyBill}/>Pagar
-						</button>
-					</div>
 				</tbody>
 			</table>
+				<div className="botonera">
+					<button className="btn-table-volver">
+						<FontAwesomeIcon className="email-icon" icon={faBackward}/> Volver
+					</button>
+
+					<button className="btn-table">
+						<FontAwesomeIcon className="email-icon" icon={faEnvelope}/> E-mail
+					</button>
+
+					<button className="btn-table">
+						<FontAwesomeIcon className="print-icon" icon={faPrint}/> Imprimir
+					</button>
+
+					<button className="btn-table">
+						<FontAwesomeIcon className="pay-icon" icon={faMoneyBill}/> Pagar
+					</button>
+				</div>
 		</div>
 	);
 }
