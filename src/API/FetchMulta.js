@@ -5,6 +5,8 @@ import '../Styles/tables.css';
 
 class FetchMulta extends React.Component {
 
+
+
 	// Constructor
 	constructor(props) {
 		super(props);
@@ -28,9 +30,16 @@ class FetchMulta extends React.Component {
 			})
 	}
 	render() {
+
+
+		const {causa, setCausa} = this.state;
 		const { DataisLoaded, items } = this.state;
 		if (!DataisLoaded) return <div>
 			<h1> Loading... </h1> </div> ;
+
+		const seleccionar = causa => {
+			console.log(causa)
+		} 
 
 		return (
 		<div className = "FetchInf">
@@ -38,7 +47,8 @@ class FetchMulta extends React.Component {
 				<thead>
 					<tr className="tabla-deuda">
 						<th>
-							<input type="checkbox"></input>
+							{/* <input type="checkbox"></input> */}
+							
 						</th>
 						<th>Causa</th>
 						<th>Año</th>
@@ -52,7 +62,12 @@ class FetchMulta extends React.Component {
 				items.map((item, index) => (
 				<tr className="tabla-content" key = { index } >
 					 <th>
-						 <input type="checkbox"></input>
+						 {/* <input type="checkbox"></input> */}
+						 <button className="btn btn-danger" 
+								onClick={() => seleccionar(item)}
+						 >
+							 Seleccionar
+						 </button>
 					 </th>	
 					 <td>{ item.numeroCausa }</td>
 					 <td>{ item.añoCausa }</td>
