@@ -24,7 +24,7 @@ const AccordionItem = ({ faq }) => {
                 className="answer_wrapper"
                 style={
                     clicked
-                        ? { height: contentEl.current.scrollHeight +300  }
+                        ? { height: "500px"  }
                         : { height: "0" }
                 }
             >

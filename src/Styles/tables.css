@@ -6,8 +6,8 @@ td, th {
 
 table {
     border-collapse: collapse;
+    color:#767676;
 }
-
 
 .botonera {
     padding: 8px;
@@ -20,23 +20,11 @@ table {
 
 .btn-table{
     background-color: #929ce9;
-    width: 80px;
+    width: 90px;
     border-radius: 4px;
     border: solid 1px #f4f5f8;
     color: #ffff;
     transition-duration: 0.4s;
-}
-
-.btn-table-volver {
-    background-color: #ffff;
-    border-radius: 4px;
-    border: solid 1px #cacaca;
-    color: #cacaca;
-}
-
-.btn-table-volver:hover {
-  background-color: #949494; 
-  color: white;
 }
 
 .btn-table:hover {

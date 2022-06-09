@@ -21,7 +21,7 @@ export default function FetchMulta() {
 		getData()
 	}, [])
 
-	//renderizado de header
+	//renderizado de header tabla
 
 	const renderHeader = () => {
 		let headerElement = ['', 'causa', 'año', 'acta', 'dominio', 'importe']
@@ -34,7 +34,8 @@ export default function FetchMulta() {
 		})
 	}
 
-	//renderizado de tabla
+	//renderizado de body tabla
+	
 	const seleccionar = causa => {
 
 		setCausa(causa)

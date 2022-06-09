@@ -1,12 +1,11 @@
 import React from 'react'
-//import axios from 'axios'
-import { faPrint, faEnvelope, faMoneyBill, faBackward } from '@fortawesome/free-solid-svg-icons';
+import { faPrint, faEnvelope, faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../Styles/tables.css';
 
 export default function FetchCuotas(props) {
 
-	//renderizado de header
+	//renderizado de header tabla
 
 	const renderHeader = () => {
 		let headerElement = ['', 'cuota', 'periodo', 'recargo', 'total', 'vto']
@@ -19,7 +18,7 @@ export default function FetchCuotas(props) {
 		})
 	}
 
-	//renderizado de tabla
+	//renderizado de body tabla
 
 	const renderBody = () => {
 
@@ -37,7 +36,6 @@ export default function FetchCuotas(props) {
 				</tr>
 			)
 		})
-
 	}
 
 	return (
@@ -54,10 +52,6 @@ export default function FetchCuotas(props) {
 			{/* Sección Botonera */}
 
 			<div className="botonera">
-				<button className="btn-table-volver">
-					<FontAwesomeIcon className="email-icon" icon={faBackward} /> Volver
-				</button>
-
 				<button className="btn-table">
 					<FontAwesomeIcon className="email-icon" icon={faEnvelope} /> E-mail
 				</button>
