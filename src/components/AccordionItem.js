@@ -24,8 +24,8 @@ const AccordionItem = ({ faq }) => {
                 className="answer_wrapper"
                 style={
                     clicked
-                        ? { height: contentEl.current.scrollHeight }
-                        : { height: "0px" }
+                        ? { height: contentEl.current.scrollHeight +300  }
+                        : { height: "0" }
                 }
             >
                 <div className="answer">{answer}</div>

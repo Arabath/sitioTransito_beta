@@ -72,5 +72,4 @@ export default function FetchCuotas(props) {
 			</div>
 		</>
 	)
-
 }
