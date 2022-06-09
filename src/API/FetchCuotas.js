@@ -8,7 +8,9 @@ class FetchCuotas extends React.Component {
 	// Constructor
 	constructor(props) {
 		super(props);
+		const causa = {props}
 		
+		console.log(causa)
 		this.state = {
 			items: [],
 			DataisLoaded: false

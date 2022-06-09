@@ -1,85 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import { faPrint, faEnvelope, faMoneyBill, faBackward } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../Styles/tables.css';
 
-class FetchMulta extends React.Component {
+
+export default function FetchMulta() {
+
+  const [data, setData] = useState([])
+  
+  const getData = async () => {
+    let url = 'http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/20468120179'
+
+    const response = await axios.get(url)
+    console.log('response', response)
+    setData(response.data)
+}
 
 
-
-	// Constructor
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			items: [],
-			DataisLoaded: false
-		};
-	}
-
-	// ComponentDidMount is used to
-	// execute the code
-	componentDidMount() {
-		fetch("http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/20468120179")
-			.then((res) => res.json())
-			.then((json) => {
-				this.setState({
-					items: json,
-					DataisLoaded: true
-				});
-			})
-	}
-	render() {
+    useEffect(() => {
+        getData()
+}, []) 
 
 
-		const {causa, setCausa} = this.state;
-		const { DataisLoaded, items } = this.state;
-		if (!DataisLoaded) return <div>
-			<h1> Loading... </h1> </div> ;
+const renderHeader = () => {
+    let headerElement = ['causa', 'año', 'acta', 'dominio', 'importe']
 
-		const seleccionar = causa => {
-			console.log(causa)
-		} 
+    return headerElement.map((key, index) => {
+        return <th key={index}>{key.toUpperCase()}</th>
+    })
+}
 
-		return (
-		<div className = "FetchInf">
-			<table>
-				<thead>
-					<tr className="tabla-deuda">
-						<th>
-							{/* <input type="checkbox"></input> */}
-							
-						</th>
-						<th>Causa</th>
-						<th>Año</th>
-						<th>Acta</th>
-						<th>Dominio</th>
-						<th>Importe</th>
-					</tr>
-				</thead>
-				<tbody>
-				{
-				items.map((item, index) => (
-				<tr className="tabla-content" key = { index } >
-					 <th>
-						 {/* <input type="checkbox"></input> */}
-						 <button className="btn btn-danger" 
-								onClick={() => seleccionar(item)}
-						 >
-							 Seleccionar
-						 </button>
-					 </th>	
-					 <td>{ item.numeroCausa }</td>
-					 <td>{ item.añoCausa }</td>
-					 <td>{ item.numeroActa }</td>
-					 <td>{ item.dominio }</td>
-					 <td>${ item.importe }</td>
-				</tr>
-				))
-				}
-				</tbody>
-			</table>
-				<div className="botonera">
+const renderBody = () => {
+    return data && data.map((item, index) => {
+        return (
+            <tr className="tabla-content" key = { index }>
+                <td>{ item.numeroCausa }</td>
+				<td>{ item.añoCausa }</td>
+				<td>{ item.numeroActa }</td>
+				<td>{ item.dominio }</td>
+				<td>${ item.importe }</td>
+            </tr>
+        )
+    })
+}
+
+return (
+    <>
+        <table>
+            <thead>
+                <tr>{renderHeader()}</tr>
+            </thead>
+            <tbody>
+                {renderBody()}
+            </tbody>
+        </table>
+		<div className="botonera">
 					<button className="btn-table-volver">
 						<FontAwesomeIcon className="email-icon" icon={faBackward}/> Volver
 					</button>
@@ -96,9 +72,7 @@ class FetchMulta extends React.Component {
 						<FontAwesomeIcon className="pay-icon" icon={faMoneyBill}/> Pagar
 					</button>
 				</div>
-		</div>
-	);
-}
-}
+    </>
+)
 
-export default FetchMulta;
+}

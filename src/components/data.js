@@ -1,4 +1,4 @@
-import FetchCuotas from "../API/FetchCuotas";
+// import FetchCuotas from "../API/FetchCuotas";
 import FetchMulta from "../API/FetchMulta";
 
 export const faqs = [
@@ -7,10 +7,6 @@ export const faqs = [
       answer:
       <FetchMulta />
         
-    },
-    {
-      question: "Cuotas",
-      answer:
-      <FetchCuotas />
     }
+ 
 ];
