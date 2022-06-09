@@ -1,94 +1,76 @@
-import React from "react";
-import '../Styles/tables.css';
+import React from 'react'
+//import axios from 'axios'
 import { faPrint, faEnvelope, faMoneyBill, faBackward } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../Styles/tables.css';
 
-class FetchCuotas extends React.Component {
-	
-	// Constructor
-	constructor(props) {
-		super(props);
-		const causa = {props}
-		
-		console.log(causa)
-		this.state = {
-			items: [],
-			DataisLoaded: false
-		};
-	}
-	
-	// ComponentDidMount is used to
-	// execute the code
-	componentDidMount() {
-		fetch("http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/20468120179")
-		.then((res) => res.json())
-		.then((json) => {
-			this.setState({
-				items: json,
-				DataisLoaded: true
-			});
+export default function FetchCuotas(props) {
+
+	//renderizado de header
+
+	const renderHeader = () => {
+		let headerElement = ['', 'cuota', 'periodo', 'recargo', 'total', 'vto']
+
+		return headerElement.map((key, index) => {
+			return <th
+				className="tabla-deuda"
+				key={index}>{key.toUpperCase()}
+			</th>
 		})
 	}
-	render() {
-	
-		const { DataisLoaded, items } = this.state;
-		if (!DataisLoaded) return <div>
-			<h1> Loading... </h1> </div> ;
 
-		return (
-		<div className = "FetchCuota">
+	//renderizado de tabla
+
+	const renderBody = () => {
+
+		return props.causa.cuotas.map((item, index) => {
+			return (
+				<tr className="tabla-content" key={index}>
+					<td>
+						<input type="checkbox"></input>
+					</td>
+					<td>{item.cuota}</td>
+					<td>{item.periodo}</td>
+					<td>${item.recargo}</td>
+					<td>${item.total}</td>
+					<td>{item.vencimiento}</td>
+				</tr>
+			)
+		})
+
+	}
+
+	return (
+		<>
 			<table>
 				<thead>
-					<tr className="tabla-cuotas">
-						<th>
-							<input type="checkbox"></input>
-						</th>
-						<th>Cuota</th>
-						<th>Periodo</th>
-						<th>Importe</th>
-						<th>Recargo</th>
-						<th>Total</th>
-						<th>Vto</th>
-					</tr>
+					<tr>{renderHeader()}</tr>
 				</thead>
-                <tbody>
-				{
-				items[0].cuotas.map((item, index) => (
-				<tr key = { index } >
-					<th>
-						 <input type="checkbox"></input>
-					</th>	
-					<td>{ item.cuota }</td>
-					<td>{ item.periodo }</td>
-					<td>{ item.importeOriginal }</td>
-					<td>{ item.recargo }</td>
-					<td>{ item.total }</td>
-					<td>{ item.vencimiento }</td>
-				</tr>
-				))
-				}
+				<tbody>
+					{renderBody()}
 				</tbody>
 			</table>
-				<div className="botonera">
-					<button className="btn-table-volver">
-						<FontAwesomeIcon className="email-icon" icon={faBackward}/> Volver
-					</button>
 
-					<button className="btn-table">
-						<FontAwesomeIcon className="email-icon" icon={faEnvelope}/> E-mail
-					</button>
+			{/* Sección Botonera */}
 
-					<button className="btn-table">
-						<FontAwesomeIcon className="print-icon" icon={faPrint}/> Imprimir
-					</button>
+			<div className="botonera">
+				<button className="btn-table-volver">
+					<FontAwesomeIcon className="email-icon" icon={faBackward} /> Volver
+				</button>
 
-					<button className="btn-table">
-						<FontAwesomeIcon className="pay-icon" icon={faMoneyBill}/> Pagar
-					</button>
-				</div>
-		</div>
-	);
+				<button className="btn-table">
+					<FontAwesomeIcon className="email-icon" icon={faEnvelope} /> E-mail
+				</button>
+
+				<button className="btn-table">
+					<FontAwesomeIcon className="print-icon" icon={faPrint} /> Imprimir
+				</button>
+
+				<button className="btn-table">
+					<FontAwesomeIcon className="pay-icon" icon={faMoneyBill} /> Pagar
+				</button>
+			</div>
+		</>
+	)
+
 }
-}
-
-export default FetchCuotas;

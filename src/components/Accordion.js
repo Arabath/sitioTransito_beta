@@ -9,6 +9,7 @@ const Accordion = () => {
         <AccordionItem key={index} faq={faq} />
       ))}
     </ul>
+  
   );
 };
 
