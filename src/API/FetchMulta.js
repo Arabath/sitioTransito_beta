@@ -10,7 +10,7 @@ export default function FetchMulta() {
 	const [causa, setCausa] = useState('')
 
 	const getData = async () => {
-		let url = 'http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/20468120179'
+		let url = 'http://localhost:3001/deudores'
 
 		const response = await axios.get(url)
 		console.log('response', response)
@@ -73,7 +73,7 @@ export default function FetchMulta() {
 
 			<br></br>
 			{
-				causa === '' ? <h1>SIN INFO</h1> : <FetchCuotas causa={causa} />
+				causa === '' ? <h1></h1> : <FetchCuotas causa={causa} />
 			}
 		</>
 	)

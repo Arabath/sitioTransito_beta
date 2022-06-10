@@ -6,6 +6,11 @@ import '../Styles/styles.css';
 export default function Home() {
 	const [documento, setDocumento] = useState('');
 
+	const mainInputChangeHandler = (event) => {
+		setDocumento(event.target.value)
+	}
+
+
 	return (
 			<div className='App__wrapper'>
 				<div className='login__container'>
@@ -16,7 +21,7 @@ export default function Home() {
 						</img>
 						<div className="subtitle-section">
 							<h3 className='logo-subtitulo'>CONSULTA DE INFRACCIONES MUNICIPALES</h3>
-							<UserInput setDocumento={setDocumento} documento={documento} />
+							<UserInput onChangeInput={mainInputChangeHandler} documento={documento} />
 						</div>
 					</div>
 				</div>
