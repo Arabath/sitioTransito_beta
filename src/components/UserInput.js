@@ -24,10 +24,10 @@ export default function UserInput({onChangeInput, documento}) {
 								name='documento'
 								type='text'
 								placeholder='Ingrese su DNI*'
-								// onChange={onChangeInput(e.target.value)}
+								onChange={buttonClickHandler}
 							/>
-							{/* <button onClick={() => setShow(!show)} className="toggle-btn"> */}
-							<button onClick={buttonClickHandler} className="toggle-btn">
+
+							<button className="toggle-btn" type='submit'>
 								<FontAwesomeIcon className='icon-search' icon={faSearch} />
 							</button>
 							<div>

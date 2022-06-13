@@ -6,9 +6,15 @@ import '../Styles/styles.css';
 export default function Home() {
 	const [documento, setDocumento] = useState('');
 
-	const mainInputChangeHandler = (event) => {
+	const mainInputChangeHandler = event => {
 		setDocumento(event.target.value)
+		console.log(documento)
 	}
+
+
+// Filtrar peticion fetch con el valor del input
+// setear correctamente el estado de documento
+// scroll link hasta el campo
 
 
 	return (
@@ -25,6 +31,6 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-			</div>	
+			</div>
 	);
 }

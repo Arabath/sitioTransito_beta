@@ -13,7 +13,7 @@ export default function FetchMulta() {
 		let url = 'http://localhost:3001/deudores'
 
 		const response = await axios.get(url)
-		console.log('response', response)
+
 		setData(response.data)
 	}
 
