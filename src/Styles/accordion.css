@@ -8,10 +8,9 @@
   
 
   .accordion {
-    position: relative;
-    right: 140px;
-    justify-content: flex-start;
+    padding: 0;
     margin: auto;
+    margin-top: 2rem;
     list-style: none;
     width: 550px;
   }
