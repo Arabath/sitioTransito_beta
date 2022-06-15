@@ -15,10 +15,6 @@ export default function Home() {
 		// dni && console.log(dni);
 	}, [dni]);
 
-	// Filtrar peticion fetch con el valor del input
-	// setear correctamente el estado de documento - ok
-	// scroll link hasta el campo
-
 	return (
 		<div className='App__wrapper'>
 			<div className='login__container'>

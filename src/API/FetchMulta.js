@@ -8,26 +8,22 @@ export default function FetchMulta({ dni }) {
 	const [causa, setCausa] = useState('');
 
 	const getData = async (dni) => {
-		{
-			if (dni) {
-				try {
-					// let url = `http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/${dni}`;
-					let url = 'http://localhost:3001/deudores/';
+		if (dni) {
+			try {
+				let url = `http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/${dni}`;
+				// let url = 'http://localhost:3001/deudores/'; (endpoint de prueba local.)
 
-					const response = await axios.get(url);
+				const response = await axios.get(url);
 
-					setData(response.data);
-				} catch (err) {
-					console.log('Error de conexión');
-				}
+				setData(response.data);
+			} catch (err) {
+				console.log('Error de conexión');
 			}
 		}
 	};
 
 	useEffect(() => {
 		getData(dni);
-		console.log(`Dni: ${dni}`);
-		console.log(data);
 	}, [dni]);
 
 	//renderizado de header tabla
