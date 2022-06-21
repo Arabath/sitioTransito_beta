@@ -1,3 +1,7 @@
+* {
+    font-family: poppins;
+}
+
 td, th {
     border: 1px solid #f4f3f8;
     padding:0.5rem;
@@ -7,6 +11,41 @@ td, th {
 table {
     border-collapse: collapse;
     color:#767676;
+}
+
+.btn-detalle {
+    background-color: #929ce9;
+    width: 90px;
+    border-radius: 4px;
+    border: solid 1px #f4f5f8;
+    color: #ffff;
+    transition-duration: 0.4s;
+}
+
+.btn-detalle:hover {
+    background-color: #9816f4; 
+    color: white;
+}
+
+.desc-container {
+    background-color: #ececec;
+    border-radius: 5px;
+    padding: 1px;
+}
+
+.desc-title {  
+    font-size: 14px;
+    font-weight: bold;
+    color:#8d8c8c;
+}
+
+.descripcion {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  flex-direction: column;
+  background-color: #fbfafc; 
+  color:#8d8c8c;
 }
 
 .botonera {
@@ -28,13 +67,12 @@ table {
 }
 
 .btn-table:hover {
-    background-color: #aa5fff; 
+    background-color: #9816f4; 
     color: white;
 }
 
 .tabla-deuda, .tabla-cuotas {
     background-color:#ececec;
-    font-family: poppins;
     font-size: 14px;
     color: rgb(141, 140, 140);
 }

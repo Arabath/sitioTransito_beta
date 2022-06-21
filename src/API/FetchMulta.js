@@ -45,6 +45,7 @@ export default function FetchMulta({ dni }) {
 	const seleccionar = (causa) => {
 		setCausa(causa);
 	};
+
 	const renderBody = () => {
 		return (
 			data &&
@@ -52,8 +53,8 @@ export default function FetchMulta({ dni }) {
 				return (
 					<tr className='tabla-content' key={index}>
 						<td>
-							<button className='btn btn-danger' onClick={() => seleccionar(item)}>
-								Seleccionar
+							<button className='btn-detalle' onClick={() => seleccionar(item)}>
+								Detalle
 							</button>
 						</td>
 						<td>{item.numeroCausa}</td>
@@ -61,6 +62,21 @@ export default function FetchMulta({ dni }) {
 						<td>{item.numeroActa}</td>
 						<td>{item.dominio}</td>
 						<td>${item.importe}</td>
+					</tr>
+				);
+			})
+		);
+	};
+
+	const renderDesc = () => {
+		return (
+			data &&
+			data.map((item, index) => {
+				return (
+					<tr className='tabla-descripcion' key={index}>	
+						<div>
+							{item.descripcion}
+						</div>
 					</tr>
 				);
 			})
@@ -75,6 +91,14 @@ export default function FetchMulta({ dni }) {
 				</thead>
 				<tbody>{renderBody()}</tbody>
 			</table>
+
+			<br></br>
+			<div className='desc-container'>
+				<p className='desc-title'>DESCRIPCIÓN</p>
+				<div className='descripcion'>
+					{renderDesc()}
+				</div>
+			</div>
 
 			<br></br>
 			{/* eslint-disable */}
