@@ -21,15 +21,14 @@ export default function FetchMulta({ dni }) {
 			}
 		}
 	};
-
+ 
 	useEffect(() => {
 		getData(dni);
 	}, [dni]);
 
 	//renderizado de header tabla
-
 	const renderHeader = () => {
-		let headerElement = ['', 'causa', 'año', 'acta', 'dominio', 'importe'];
+		let headerElement = ['', 'causa', 'año', 'acta', 'dominio'];
 
 		return headerElement.map((key, index) => {
 			return (
@@ -41,7 +40,6 @@ export default function FetchMulta({ dni }) {
 	};
 
 	//renderizado de body tabla
-
 	const seleccionar = (causa) => {
 		setCausa(causa);
 	};
@@ -61,7 +59,6 @@ export default function FetchMulta({ dni }) {
 						<td>{item.añoCausa}</td>
 						<td>{item.numeroActa}</td>
 						<td>{item.dominio}</td>
-						<td>${item.importe}</td>
 					</tr>
 				);
 			})

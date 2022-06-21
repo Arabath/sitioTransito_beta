@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
 export default function UserInput({ onChangeInput }) {
 	const [inputValue, setInputValue] = useState('');
 
@@ -14,6 +13,9 @@ export default function UserInput({ onChangeInput }) {
 	const inputChangeHandler = (event) => {
 		setInputValue(event.target.value);
 	};
+
+	// const element = document.getElementById("home");
+	// element.scrollIntoView({block: "end", behavior: "smooth"});
 
 	return (
 		<form onSubmit={formSend} noValidate>
@@ -29,7 +31,7 @@ export default function UserInput({ onChangeInput }) {
 						onChange={inputChangeHandler}
 					/>
 
-					<button className='toggle-btn' type='submit'>
+					<button className='toggle-btn' type='submit' >
 						<FontAwesomeIcon className='icon-search' icon={faSearch} />
 					</button>
 				</div>

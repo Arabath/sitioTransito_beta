@@ -1,6 +1,7 @@
 import AccordionItem from './AccordionItem';
 import '../../Styles/accordion.css';
 import FetchMulta from '../../API/FetchMulta';
+//import UserInput from '../UserInput';
 
 const Accordion = ({ dni }) => {
 	const faqs = [
@@ -11,7 +12,7 @@ const Accordion = ({ dni }) => {
 	];
 
 	return (
-		<ul className='accordion'>
+		<ul className='accordion' id='home'>
 			{faqs.map((faq, index) => (
 				<AccordionItem key={index} faq={faq} />
 			))}
