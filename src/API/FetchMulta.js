@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../Styles/tables.css';
 import FetchCuotas from './FetchCuotas';
 
-export default function FetchMulta({ dni }) {
+export default function FetchMulta({ dni, onFetch }) {
 	const [data, setData] = useState([]);
 	const [causa, setCausa] = useState('');
 
@@ -11,17 +11,15 @@ export default function FetchMulta({ dni }) {
 		if (dni) {
 			try {
 				let url = `http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/${dni}`;
-				// let url = 'http://localhost:3001/deudores/'; (endpoint de prueba local.)
-
 				const response = await axios.get(url);
-
 				setData(response.data);
+				onFetch()
 			} catch (err) {
 				console.log('Error de conexión');
 			}
 		}
 	};
- 
+
 	useEffect(() => {
 		getData(dni);
 	}, [dni]);

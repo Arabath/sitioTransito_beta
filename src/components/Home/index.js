@@ -1,9 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import UserInput from '../UserInput';
 import '../../Styles/styles.css';
 import Accordion from '../Accordion';
 
 export default function Home() {
+	const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop)
+
+	const myRef = useRef(null);
+
+	const executeScroll = () => scrollToRef(myRef)
+
 	const [dni, setDni] = useState('');
 
 	const mainInputChangeHandler = (inputValue) => {
@@ -11,8 +17,6 @@ export default function Home() {
 	};
 
 	useEffect(() => {
-		// Filtrado del componente FetchMulta
-		// dni && console.log(dni);
 	}, [dni]);
 
 	return (
@@ -23,11 +27,11 @@ export default function Home() {
 						src='https://mi.campana.gov.ar/Content/Images/logoLogin.svg'
 						alt='login-logo'
 					></img>
-					<div className='subtitle-section'>
+					<div  className='subtitle-section'>
 						<h3 className='logo-subtitulo'>CONSULTA DE INFRACCIONES MUNICIPALES</h3>
 						<UserInput onChangeInput={mainInputChangeHandler} />
 					</div>
-					<div>{dni && <Accordion dni={dni} />}</div>
+					<div ref={myRef}>{dni && <Accordion dni={dni} onFetch={executeScroll} />}</div>
 				</div>
 			</div>
 		</div>

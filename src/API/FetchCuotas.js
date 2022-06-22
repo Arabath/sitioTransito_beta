@@ -6,7 +6,6 @@ import '../Styles/tables.css';
 export default function FetchCuotas(props) {
 
 	//renderizado de header tabla
-
 	const renderHeader = () => {
 		let headerElement = ['', 'cuota', 'periodo', 'recargo', 'total', 'vto']
 
@@ -19,7 +18,6 @@ export default function FetchCuotas(props) {
 	}
 
 	//renderizado de body tabla
-
 	const renderBody = () => {
 
 		return props.causa.cuotas.map((item, index) => {
@@ -50,7 +48,6 @@ export default function FetchCuotas(props) {
 			</table>
 
 			{/* Sección Botonera */}
-
 			<div className="botonera">
 				<button className="btn-table">
 					<FontAwesomeIcon className="email-icon" icon={faEnvelope} /> E-mail

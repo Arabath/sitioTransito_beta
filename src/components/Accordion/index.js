@@ -3,11 +3,11 @@ import '../../Styles/accordion.css';
 import FetchMulta from '../../API/FetchMulta';
 //import UserInput from '../UserInput';
 
-const Accordion = ({ dni }) => {
+const Accordion = ({ dni, onFetch }) => {
 	const faqs = [
 		{
 			question: 'Deuda del vehículo',
-			answer: <FetchMulta dni={dni} />,
+			answer: <FetchMulta dni={dni} onFetch={onFetch} />,
 		},
 	];
 
