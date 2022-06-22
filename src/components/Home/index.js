@@ -4,7 +4,10 @@ import '../../Styles/styles.css';
 import Accordion from '../Accordion';
 
 export default function Home() {
-	const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop)
+	const scrollToRef = ref => window.scrollTo({
+		top: 400,
+		behavior: 'smooth',
+	})
 
 	const myRef = useRef(null);
 
