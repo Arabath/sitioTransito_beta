@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import LoadingSpinner from '../Spinner/LoadingSpinner';
 
-export default function UserInput({ onChangeInput }) {
+export default function UserInput({ onChangeInput, isLoading }) {
 
 
 	const [inputValue, setInputValue] = useState('');
@@ -33,7 +34,7 @@ export default function UserInput({ onChangeInput }) {
 						onChange={inputChangeHandler}
 					/>
 
-					<button className='toggle-btn' type='submit' >
+					<button className='toggle-btn' type='submit'>
 						<FontAwesomeIcon className='icon-search' icon={faSearch} />
 					</button>
 				</div>

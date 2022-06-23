@@ -4,16 +4,15 @@ import '../../Styles/styles.css';
 import Accordion from '../Accordion';
 
 export default function Home() {
+	const [dni, setDni] = useState('');
+	
 	const scrollToRef = ref => window.scrollTo({
 		top: 400,
 		behavior: 'smooth',
 	})
 
 	const myRef = useRef(null);
-
 	const executeScroll = () => scrollToRef(myRef)
-
-	const [dni, setDni] = useState('');
 
 	const mainInputChangeHandler = (inputValue) => {
 		setDni(inputValue);

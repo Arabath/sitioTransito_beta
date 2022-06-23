@@ -2,25 +2,33 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../Styles/tables.css';
 import FetchCuotas from './FetchCuotas';
+import LoadingSpinner from '../components/Spinner/LoadingSpinner';
 
 export default function FetchMulta({ dni, onFetch }) {
 	const [data, setData] = useState([]);
 	const [causa, setCausa] = useState('');
+	const [isLoading, setIsLoading] = useState(false); //spinner load
+	const [errorMessage, setErrorMessage] = useState(""); //Error display 
 
 	const getData = async (dni) => {
 		if (dni) {
 			try {
+				setIsLoading(true); //spinner load
 				let url = `http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/${dni}`;
 				const response = await axios.get(url);
 				setData(response.data);
 				onFetch()
+				setIsLoading(false); // After spinner load
 			} catch (err) {
-				console.log('Error de conexión');
+				// console.log('Error de conexión');
+				setErrorMessage("DNI no posee registros");
+      			setIsLoading(false);
 			}
 		}
 	};
-
+	
 	useEffect(() => {
+		// eslint-disable 
 		getData(dni);
 	}, [dni]);
 
@@ -98,6 +106,8 @@ export default function FetchMulta({ dni, onFetch }) {
 			<br></br>
 			{/* eslint-disable */}
 			{causa === '' ? <h1></h1> : <FetchCuotas causa={causa} />}
+			{isLoading ? <LoadingSpinner /> : renderBody} {/* Spinner */}
+			{errorMessage && <div className="error">{errorMessage}</div>} {/* Error display  */}
 		</>
 	);
 }
