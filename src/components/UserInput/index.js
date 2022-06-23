@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import LoadingSpinner from '../Spinner/LoadingSpinner';
 
-export default function UserInput({ onChangeInput, isLoading }) {
+export default function UserInput({ onChangeInput }) {
 
 
 	const [inputValue, setInputValue] = useState('');
@@ -17,9 +16,6 @@ export default function UserInput({ onChangeInput, isLoading }) {
 		setInputValue(event.target.value);
 	};
 
-	// const element = document.getElementById("home");
-	// element.scrollIntoView({block: "end", behavior: "smooth"});
-
 	return (
 		<form onSubmit={formSend} noValidate>
 			<div className='form-component'>
@@ -32,6 +28,7 @@ export default function UserInput({ onChangeInput, isLoading }) {
 						value={inputValue}
 						placeholder={'Ingrese dni'}
 						onChange={inputChangeHandler}
+						style={{color:'#4a4949'}}
 					/>
 
 					<button className='toggle-btn' type='submit'>

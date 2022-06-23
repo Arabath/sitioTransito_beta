@@ -1,12 +1,11 @@
 import AccordionItem from './AccordionItem';
 import '../../Styles/accordion.css';
 import FetchMulta from '../../API/FetchMulta';
-//import UserInput from '../UserInput';
 
 const Accordion = ({ dni, onFetch }) => {
 	const faqs = [
 		{
-			question: 'Deuda del vehículo',
+			question: 'Deuda del contribuyente',
 			answer: <FetchMulta dni={dni} onFetch={onFetch} />,
 		},
 	];
