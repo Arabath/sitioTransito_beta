@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { faPrint, faEnvelope, faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import SwitchToggle from '../components/SwitchToggle/SwitchToggle';
 import '../Styles/tables.css';
 
 export default function FetchCuotas(props) {
+	const [checked, setChecked] = useState(true);
+	// const [value, setValue] = useState(false);
 
-	//renderizado de header tabla
+	/*
+	<SwitchToggle 
+		isOn={value}
+		handleToggle={() => setValue(!value)}
+	/> 
+	*/
+	
+		//renderizado de header tabla
 	const renderHeader = () => {
-		let headerElement = ['', 'cuota', 'periodo', 'recargo', 'total', 'vto']
-
+		let headerElement = [ '','cuota', 'periodo', 'recargo', 'total', 'vto']
+		
 		return headerElement.map((key, index) => {
 			return <th
 				className="tabla-deuda"
@@ -27,7 +37,10 @@ export default function FetchCuotas(props) {
 			return (
 				<tr className="tabla-content" key={index}>
 					<td>
-						<input type="checkbox"></input>
+						<input type="checkbox"
+							defaultChecked={checked}
+							onChange={() => setChecked(!checked)}
+						/>
 					</td>
 					<td>{item.cuota}</td>
 					<td>{item.periodo}</td>
