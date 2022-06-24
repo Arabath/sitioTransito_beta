@@ -19,8 +19,11 @@ export default function FetchCuotas(props) {
 
 	//renderizado de body tabla
 	const renderBody = () => {
-
 		return props.causa.cuotas.map((item, index) => {
+			// Parsing de fecha, excluye hora
+			let formattedDate = new Date(item.vencimiento)
+			.toLocaleString('es-BA', {day: 'numeric', month:'numeric', year:'numeric'})
+
 			return (
 				<tr className="tabla-content" key={index}>
 					<td>
@@ -30,7 +33,7 @@ export default function FetchCuotas(props) {
 					<td>{item.periodo}</td>
 					<td>${item.recargo}</td>
 					<td>${item.total}</td>
-					<td>{item.vencimiento}</td>
+					<td>{formattedDate}</td>
 				</tr>
 			)
 		})

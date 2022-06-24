@@ -20,19 +20,19 @@ export default function FetchMulta({ dni, onFetch }) {
 				onFetch()
 				setIsLoading(false); // After spinner load
 			} catch (err) {
-				// console.log('Error de conexión');
+				console.log('Error de conexión');
 				setErrorMessage("DNI no posee registros");
-      			setIsLoading(false);
+      			setIsLoading(false); //hide the loading spinner as the API has already responded.
 			}
 		}
 	};
 	
 	useEffect(() => {
-		// eslint-disable 
 		getData(dni);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [dni]);
 
-	//renderizado de header tabla
+	//render header tabla
 	const renderHeader = () => {
 		let headerElement = ['', 'causa', 'año', 'acta', 'dominio'];
 
@@ -45,11 +45,11 @@ export default function FetchMulta({ dni, onFetch }) {
 		});
 	};
 
-	//renderizado de body tabla
 	const seleccionar = (causa) => {
 		setCausa(causa);
 	};
-
+	
+	//render body tabla
 	const renderBody = () => {
 		return (
 			data &&
@@ -76,11 +76,13 @@ export default function FetchMulta({ dni, onFetch }) {
 			data &&
 			data.map((item, index) => {
 				return (
-					<tr className='tabla-descripcion' key={index}>	
-						<div>
-							{item.descripcion}
-						</div>
-					</tr>
+					<table>
+						<tr className='tabla-descripcion' key={index}>	
+							<>
+								{item.descripcion}
+							</>
+						</tr>
+					</table>
 				);
 			})
 		);
