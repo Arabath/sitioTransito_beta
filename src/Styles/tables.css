@@ -76,3 +76,8 @@ table {
     font-size: 14px;
     color: rgb(141, 140, 140);
 }
+
+.switch-container {
+    display: flex;
+    height: 0px; 
+}

@@ -1,20 +1,13 @@
 import React, { useState } from 'react'
 import { faPrint, faEnvelope, faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import SwitchToggle from '../components/SwitchToggle/SwitchToggle';
+import SwitchToggle from '../components/SwitchToggle/SwitchToggle';
 import '../Styles/tables.css';
 
 export default function FetchCuotas(props) {
 	const [checked, setChecked] = useState(true);
-	// const [value, setValue] = useState(false);
+	const [value, setValue] = useState(false);
 
-	/*
-	<SwitchToggle 
-		isOn={value}
-		handleToggle={() => setValue(!value)}
-	/> 
-	*/
-	
 		//renderizado de header tabla
 	const renderHeader = () => {
 		let headerElement = [ '','cuota', 'periodo', 'recargo', 'total', 'vto']
@@ -22,6 +15,8 @@ export default function FetchCuotas(props) {
 		return headerElement.map((key, index) => {
 			return <th
 				className="tabla-deuda"
+				defaultChecked={checked}
+				onChange={() => setChecked(!checked)}
 				key={index}>{key.toUpperCase()}
 			</th>
 		})
@@ -30,6 +25,7 @@ export default function FetchCuotas(props) {
 	//renderizado de body tabla
 	const renderBody = () => {
 		return props.causa.cuotas.map((item, index) => {
+			
 			// Parsing de fecha, excluye hora
 			let formattedDate = new Date(item.vencimiento)
 			.toLocaleString('es-BA', {day: 'numeric', month:'numeric', year:'numeric'})
@@ -54,6 +50,12 @@ export default function FetchCuotas(props) {
 
 	return (
 		<>
+			<div className='switch-container'>
+			<SwitchToggle 
+				isOn={value}
+				handleToggle={() => setValue(!value)}
+				/> 
+			</div>
 			<table>
 				<thead>
 					<tr>{renderHeader()}</tr>
