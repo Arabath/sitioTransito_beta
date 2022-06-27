@@ -3,7 +3,8 @@ import './switch.css'
 
 const SwitchToggle = ({ isOn, handleToggle }) => {
     return (
-      <>
+      <div style={{display: 'flex', height: '35px', padding: '0.1rem 0 0 0.5rem', alignItems: 'center'}}>
+
         <label className='switch'>
         <input
           checked={isOn}
@@ -12,11 +13,9 @@ const SwitchToggle = ({ isOn, handleToggle }) => {
           type="checkbox"
         />
           <span class="slider round"></span>
-          
         </label>
-        
-      </>
+
+      </div>
     );
   };
-  
   export default SwitchToggle;

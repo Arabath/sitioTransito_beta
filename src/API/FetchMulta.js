@@ -77,7 +77,7 @@ export default function FetchMulta({ dni, onFetch }) {
 			data.map((item, index) => {
 				return (
 					<table>
-						<tr className='tabla-descripcion' key={index}>	
+						<tr className='tabla-descripcion' key={index}>
 							<>
 								{item.descripcion}
 							</>
