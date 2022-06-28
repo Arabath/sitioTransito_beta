@@ -7,7 +7,7 @@ const SwitchToggle = ({ isOn, handleToggle }) => {
 
         <label className='switch'>
         <input
-          checked={isOn}
+          defaultChecked={isOn}
           onChange={handleToggle}
           className="react-switch-checkbox"
           type="checkbox"

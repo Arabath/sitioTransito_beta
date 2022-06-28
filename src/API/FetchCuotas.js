@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SwitchToggle from '../components/SwitchToggle/SwitchToggle';
 import '../Styles/tables.css';
 
-export default function FetchCuotas(props) {
+export default function FetchCuotas({causa}) {
 	const [checked, setChecked] = useState(true);
-	const [value, setValue] = useState(false);
+	const [value, setValue] = useState(true);
 
 		//renderizado de header tabla
 	const renderHeader = () => {
@@ -31,13 +31,13 @@ export default function FetchCuotas(props) {
 
 	useEffect(() => {
 		setChecked(!checked)
-		alert(checked)
+		console.log(checked)
 	}, [value]);
 
 
 	//renderizado de body tabla
 	const renderBody = () => {
-		return props.causa.cuotas.map((item, index) => {
+		return causa.cuotas.map((item, index) => {
 
 			// Parsing de fecha, excluye hora
 			let formattedDate = new Date(item.vencimiento)
@@ -48,6 +48,7 @@ export default function FetchCuotas(props) {
 					<td>
 						<input type="checkbox"
 							defaultChecked={checked}
+							value={checked}
 							// onChange={() => setChecked(!checked)}
 						/>
 					</td>
@@ -66,7 +67,6 @@ export default function FetchCuotas(props) {
 			<div className='switch-container'>
 			<SwitchToggle
 				isOn={value}
-				// handleToggle={() => alert(!value)}
 				handleToggle={onHandleToggle}
 				/>
 			</div>
