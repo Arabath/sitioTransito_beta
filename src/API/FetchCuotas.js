@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { faPrint, faEnvelope, faMoneyBill } from '@fortawesome/free-solid-svg-icons';
+import { faPrint, faMoneyBill, faBackwardStep } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SwitchToggle from '../components/SwitchToggle/SwitchToggle';
 import '../Styles/tables.css';
@@ -56,6 +56,11 @@ export default function FetchCuotas({causa}) {
 		})
 	}
 
+	//Refresh page 
+	const refreshPage = () => {
+		window.location.reload();
+	}
+
 	return (
 		<>
 			<div className='switch-container'>
@@ -75,8 +80,8 @@ export default function FetchCuotas({causa}) {
 
 			{/* Sección Botonera */}
 			<div className="botonera">
-				<button className="btn-table">
-					<FontAwesomeIcon className="email-icon" icon={faEnvelope} /> E-mail
+				<button className="btn-table"  onClick={refreshPage}>
+					<FontAwesomeIcon className="email-icon" icon={faBackwardStep}/> Volver
 				</button>
 
 				<button className="btn-table">

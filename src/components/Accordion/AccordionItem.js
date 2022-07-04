@@ -21,7 +21,7 @@ const AccordionItem = ({ faq }) => {
 			<div
 				ref={contentEl}
 				className='answer_wrapper'
-				style={clicked ? { height: '1200px' } : { height: '0' }}
+				style={clicked ? { height: '625px' } : { height: '0' }}
 			>
 				<div className='answer'>{answer}</div>
 			</div>

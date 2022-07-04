@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../Styles/tables.css';
 import FetchCuotas from './FetchCuotas';
 import LoadingSpinner from '../components/Spinner/LoadingSpinner';
+import { Button } from 'bootstrap';
 
 export default function FetchMulta({ dni, onFetch }) {
 	const [data, setData] = useState([]);
@@ -19,9 +20,15 @@ export default function FetchMulta({ dni, onFetch }) {
 				setData(response.data);
 				onFetch()
 				setIsLoading(false); // After spinner load
-			} catch (err) {
-				console.log('Error de conexión');
-				setErrorMessage("DNI no posee registros");
+			} catch (err) {	
+				setErrorMessage(
+					<div className='overlay-error'>
+						<p className='errorAlertAdvice'>
+							Error de conexión
+							<button className='refresh-btn' onClick={refreshPage}>Volver</button>
+							
+						</p>
+					</div>);
       			setIsLoading(false); //hide the loading spinner as the API has already responded.
 			}
 		}
@@ -31,6 +38,12 @@ export default function FetchMulta({ dni, onFetch }) {
 		getData(dni);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [dni]);
+
+
+	//Refresh page 
+	const refreshPage = () => {
+		window.location.reload();
+	}
 
 	//render header tabla
 	const renderHeader = () => {

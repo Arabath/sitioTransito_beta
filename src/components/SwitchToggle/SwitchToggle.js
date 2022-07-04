@@ -12,7 +12,7 @@ const SwitchToggle = ({ isOn, handleToggle }) => {
           className="react-switch-checkbox"
           type="checkbox"
         />
-          <span class="slider round"></span>
+          <span className="slider round"></span>
         </label>
 
       </div>
