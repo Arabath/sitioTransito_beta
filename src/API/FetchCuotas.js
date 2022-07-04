@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { faPrint, faEnvelope, faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SwitchToggle from '../components/SwitchToggle/SwitchToggle';
 import '../Styles/tables.css';
 
 export default function FetchCuotas({causa}) {
-	const [checked, setChecked] = useState(true);
-	const [value, setValue] = useState(true);
+	const [value, setValue] = useState(false);
+
+	const refInput = useRef([]);
 
 		//renderizado de header tabla
 	const renderHeader = () => {
@@ -15,10 +16,9 @@ export default function FetchCuotas({causa}) {
 		return headerElement.map((key, index) => {
 			return (
 			<th
-			style={{border: '1px solid red'}}
 				className="tabla-deuda"
-				defaultChecked={checked}
-				onChange={() => setChecked(!checked)}
+				defaultChecked={true}
+				onChange={() => setValue(!value)}
 				key={index}>{key.toUpperCase()}
 			</th>
 			)
@@ -27,13 +27,8 @@ export default function FetchCuotas({causa}) {
 
 	const onHandleToggle = () => {
 		setValue(!value)
+		refInput.current.forEach((element)=> element.checked = !value)
 	}
-
-	useEffect(() => {
-		setChecked(!checked)
-		console.log(checked)
-	}, [value]);
-
 
 	//renderizado de body tabla
 	const renderBody = () => {
@@ -43,16 +38,15 @@ export default function FetchCuotas({causa}) {
 			let formattedDate = new Date(item.vencimiento)
 			.toLocaleString('es-BA', {day: 'numeric', month:'numeric', year:'numeric'})
 
+			const cuotasuma = Number(item.cuota)+1 //quitar en prod.
+
 			return (
 				<tr className="tabla-content" key={index}>
 					<td>
-						<input type="checkbox"
-							defaultChecked={checked}
-							value={checked}
-							// onChange={() => setChecked(!checked)}
+						<input type="checkbox" ref={ref => (refInput.current[index] = ref)}
 						/>
 					</td>
-					<td>{item.cuota}</td>
+					<td>{cuotasuma}</td>
 					<td>{item.periodo}</td>
 					<td>${item.recargo}</td>
 					<td>${item.total}</td>
@@ -70,7 +64,7 @@ export default function FetchCuotas({causa}) {
 				handleToggle={onHandleToggle}
 				/>
 			</div>
-			<table>
+			<table >
 				<thead>
 					<tr>{renderHeader()}</tr>
 				</thead>
