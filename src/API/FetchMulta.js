@@ -3,7 +3,8 @@ import axios from 'axios';
 import '../Styles/tables.css';
 import FetchCuotas from './FetchCuotas';
 import LoadingSpinner from '../components/Spinner/LoadingSpinner';
-import { Button } from 'bootstrap';
+import { ErrorAlert } from '../components/ErrorAlerts/ErrorAlert';
+
 
 export default function FetchMulta({ dni, onFetch }) {
 	const [data, setData] = useState([]);
@@ -17,6 +18,7 @@ export default function FetchMulta({ dni, onFetch }) {
 				setIsLoading(true); //spinner load
 				let url = `http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/${dni}`;
 				const response = await axios.get(url);
+				response.data.length === 0 ? <ErrorAlert /> : console.log("Exito"); //Ver porque no renderiza el cartel.
 				setData(response.data);
 				onFetch()
 				setIsLoading(false); // After spinner load
@@ -25,8 +27,10 @@ export default function FetchMulta({ dni, onFetch }) {
 					<div className='overlay-error'>
 						<p className='errorAlertAdvice'>
 							Error de conexión
-							<button className='refresh-btn' onClick={refreshPage}>Volver</button>
-							
+							<button className='refresh-btn'
+									onClick={refreshPage}>
+									Volver
+							</button>						
 						</p>
 					</div>);
       			setIsLoading(false); //hide the loading spinner as the API has already responded.
