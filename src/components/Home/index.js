@@ -29,9 +29,11 @@ export default function Home() {
 						src='https://mi.campana.gov.ar/Content/Images/logoLogin.svg'
 						alt='login-logo'
 					></img>
-					<div  className='subtitle-section'>
-						<h3 className='logo-subtitulo'>CONSULTA DE INFRACCIONES MUNICIPALES</h3>
-						<UserInput onChangeInput={mainInputChangeHandler} />
+					<div className='userInputHolder'>
+						<div  className='subtitle-section'>
+							<h3 className='logo-subtitulo'>CONSULTA DE INFRACCIONES MUNICIPALES</h3>
+							<UserInput onChangeInput={mainInputChangeHandler} />
+						</div>
 					</div>
 					<div ref={myRef}>{dni && <Accordion dni={dni} onFetch={executeScroll} />}</div>
 				</div>

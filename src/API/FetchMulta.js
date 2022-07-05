@@ -19,9 +19,9 @@ export default function FetchMulta({ dni, onFetch }) {
 				let url = `http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/${dni}`;
 				const response = await axios.get(url);
 				response.data.length === 0 ? <ErrorAlert /> : console.log("Exito"); //Ver porque no renderiza el cartel.
+				setIsLoading(false); // After spinner load
 				setData(response.data);
 				onFetch()
-				setIsLoading(false); // After spinner load
 			} catch (err) {	
 				setErrorMessage(
 					<div className='overlay-error'>
