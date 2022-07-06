@@ -1,25 +1,20 @@
-import { useState,useEffect } from 'react';
+import { useEffect } from 'react';
 
-import Body from '../Body/Body';
+import Table from '../Table/Table';
+
+import AccordionItem from '../Accordion/AccordionItem'
+import FetchMulta from '../../API/FetchMulta';
+
 
 import '../../Styles/accordion.css';
 
+const Accordion = ({dni,onFetch,onLoading}) => {
 
-const Accordion = ({ dni, onFetch }) => {
-const [validDni, setValidDni] = useState(true);
-
-	useEffect(() => {
-		console.log(validDni)
-	}, [validDni]);
-
-	return (
-		<Body dni={dni} onFetch={onFetch} onValidate={setValidDni}/>
-		// <ul className='accordion' id='home'>
-		// 	{faqs.map((faq, index) => (
-		// 		<AccordionItem key={index} faq={faq} />
-		// 	))}
-		// </ul>
-	);
-};
+  return(
+		<>
+			<Table dni={dni} onFetch={onFetch} onLoading={onLoading}/>
+		</>
+  )
+}
 
 export default Accordion;

@@ -1,8 +1,9 @@
 import React from 'react'
+
 import '../ErrorAlerts/errorAlert.css'
 
-export const ErrorAlert = () => {
-  	//Refresh page 
+const ErrorAlert = () => {
+  	//Refresh page
 	const refreshPage = () => {
 		window.location.reload();
 	}
@@ -14,8 +15,10 @@ export const ErrorAlert = () => {
             <button className='refresh-btn'
 									onClick={refreshPage}>
 									Volver
-							</button>	
+							</button>
         </div>
     </div>
   )
-}
+};
+
+export default ErrorAlert
