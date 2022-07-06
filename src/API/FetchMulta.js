@@ -6,23 +6,29 @@ import LoadingSpinner from '../components/Spinner/LoadingSpinner';
 import { ErrorAlert } from '../components/ErrorAlerts/ErrorAlert';
 
 
-export default function FetchMulta({ dni, onFetch }) {
+export default function FetchMulta({ dni, onFetch, onValidate }) {
 	const [data, setData] = useState([]);
 	const [causa, setCausa] = useState('');
-	const [isLoading, setIsLoading] = useState(false); //spinner load
-	const [errorMessage, setErrorMessage] = useState(""); //Error display 
+	const [isLoading, setIsLoading] = useState(true); //spinner load
+	const [errorMessage, setErrorMessage] = useState(""); //Error display
+	const [errorData,setErrorData] = useState(false)
 
 	const getData = async (dni) => {
 		if (dni) {
 			try {
-				setIsLoading(true); //spinner load
 				let url = `http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/${dni}`;
 				const response = await axios.get(url);
-				response.data.length === 0 ? <ErrorAlert /> : console.log("Exito"); //Ver porque no renderiza el cartel.
 				setIsLoading(false); // After spinner load
-				setData(response.data);
-				onFetch()
-			} catch (err) {	
+
+				if (response.data.length === 0 ){
+					setErrorData(true)
+					onValidate(false)
+				}else{
+					setData(response.data);
+					console.log("Exito");
+					onFetch()
+					}
+			} catch (err) {
 				setErrorMessage(
 					<div className='overlay-error'>
 						<p className='errorAlertAdvice'>
@@ -30,21 +36,21 @@ export default function FetchMulta({ dni, onFetch }) {
 							<button className='refresh-btn'
 									onClick={refreshPage}>
 									Volver
-							</button>						
+							</button>
 						</p>
 					</div>);
       			setIsLoading(false); //hide the loading spinner as the API has already responded.
 			}
 		}
 	};
-	
+
 	useEffect(() => {
 		getData(dni);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [dni]);
 
 
-	//Refresh page 
+	//Refresh page
 	const refreshPage = () => {
 		window.location.reload();
 	}
@@ -65,7 +71,7 @@ export default function FetchMulta({ dni, onFetch }) {
 	const seleccionar = (causa) => {
 		setCausa(causa);
 	};
-	
+
 	//render body tabla
 	const renderBody = () => {
 		return (
@@ -127,6 +133,7 @@ export default function FetchMulta({ dni, onFetch }) {
 			{causa === '' ? <h1></h1> : <FetchCuotas causa={causa} />}
 			{isLoading ? <LoadingSpinner /> : renderBody} {/* Spinner */}
 			{errorMessage && <div className="error">{errorMessage}</div>} {/* Error display  */}
+			{errorData && <ErrorAlert/>} {/* Error display  */}
 		</>
 	);
 }

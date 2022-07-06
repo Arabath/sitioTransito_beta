@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import UserInput from '../UserInput';
 import '../../Styles/styles.css';
-import Accordion from '../Accordion';
+import Accordion from '../Accordion/Accordion';
 
 export default function Home() {
 	const [dni, setDni] = useState('');
-	
+
 	const scrollToRef = ref => window.scrollTo({
 		top: 400,
 		behavior: 'smooth',
@@ -19,6 +19,7 @@ export default function Home() {
 	};
 
 	useEffect(() => {
+		// alert(dni)
 	}, [dni]);
 
 	return (

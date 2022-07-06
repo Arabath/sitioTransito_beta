@@ -22,7 +22,7 @@ export default function UserInput({ onChangeInput }) {
 						id='documento'
 						className='form-control'
 						name='documento'
-						type='text'
+						type='number'
 						value={inputValue}
 						placeholder={'Ingrese dni'}
 						onChange={inputChangeHandler}
