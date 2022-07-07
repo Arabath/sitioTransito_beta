@@ -2,18 +2,13 @@ import {useEffect} from 'react'
 
 import Accordion from '../Accordion/Accordion';
 
-const Main = ({dni,onFetch, onLoading}) =>{
-
-  // TODO:
-  // useEffect(() => {
-	// 	console.log(dni)
-	// }, [dni]);
+const Main = ({dni,onFetch, onLoading,onErrorFetch,onErrorData}) =>{
 
   { if(dni){
     return (
-      <>
-        <Accordion dni={dni} onFetch={onFetch} onLoading={onLoading}/>
-      </>
+      <div>
+        <Accordion dni={dni} onFetch={onFetch} onLoading={onLoading} onErrorFetch={onErrorFetch} onErrorData={onErrorData}/>
+      </div>
     )}
   }
 }

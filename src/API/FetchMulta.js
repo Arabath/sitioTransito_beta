@@ -1,25 +1,23 @@
 import { useEffect } from 'react';
 import axios from 'axios';
 
-export default function FetchMulta({ dni, onFetch,onFetchData, onLoading}) {
+export default function FetchMulta({ dni, onFetchData, onLoading, onErrorFetch,onErrorData}) {
 
 	const getData = async (dni) => {
 		if (dni) {
 			try {
 				let url = `http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/${dni}`;
-				const response = await axios.get(url);
 				onLoading(true); // After spinner load
-
+				const response = await axios.get(url);
 				if (response.data.length === 0 ){
-					// setErrorData(true) Error not Found
+					onErrorFetch(true)
 				}else{
 					console.log("Exito");
-					onFetch()
 					onFetchData(response.data)
 					onLoading(false)
 					}
 			} catch (err) {
-				// setErrorMessage(true); Error Fetch
+				onErrorData(true)
       	onLoading(false); //hide the loading spinner as the API has already responded.
 			}
 		}

@@ -6,13 +6,12 @@ import LoadingSpinner from '../Spinner/LoadingSpinner'
 
 import UserInput from '../UserInput';
 
-import Main from '../Main/main';
+import Main from '../Main/Main';
 
 import '../../Styles/styles.css';
 
 export default function Home() {
 	const [dni, setDni] = useState('');
-
 	const [errorFetch, setErrorFetch] = useState(false); //Error Fetch
 	const [errorData,setErrorData] = useState(false) //Error Not Found
 	const [isLoading, setIsLoading] = useState(false) //Spinner
@@ -31,15 +30,8 @@ export default function Home() {
 		setDni(inputValue);
 	};
 
-	TODO:
-	// #Borrar al depurar
-	// useEffect(() => {
-	// 	console.log(dni)
-	// }, [dni])
-
-
 	return (
-		<div className='App__container' >
+		<div className='app__container' >
 			<div className='login__wrapper' >
 				<div className='login__logo'>
 					<img
@@ -59,9 +51,10 @@ export default function Home() {
 
 					</div>
 				</div>
-					<div >
-						<Main dni={dni} onFetch={executeScroll} onLoading={setIsLoading}/>
+					<div className={isLoading ? 'display-none' : ''}>
+						<Main dni={dni} onFetch={executeScroll} onLoading={setIsLoading} onErrorFetch={setErrorFetch} onErrorData={setErrorData}/>
 					</div>
+					<div ref={myRef}></div>
 			</div>
 		</div>
 	);

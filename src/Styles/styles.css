@@ -1,5 +1,12 @@
+.display-none{
+    display:none
+}
 
-.App__wrapper {
+.app__container {
+    margin-top: 7rem;
+}
+
+.app__wrapper {
     padding: 75px;
 }
 

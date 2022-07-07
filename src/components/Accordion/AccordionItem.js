@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useRef } from 'react';
 
-const AccordionItem = ({ faq }) => {
+import Table from '../Table/Table'
+
+const AccordionItem = ({ faq, data, causa, setCausa, onFetch}) => {
 	const [clicked, setClicked] = useState(true);
 	const contentEl = useRef();
 
@@ -21,9 +23,10 @@ const AccordionItem = ({ faq }) => {
 			<div
 				ref={contentEl}
 				className='answer_wrapper'
-				style={clicked ? { height: '625px' } : { height: '0' }}
+				style={clicked ? { height: 'auto' } : { height: '0' }}
 			>
 				<div className='answer'>{answer}</div>
+			<Table onFetch={onFetch} data={data} causa={causa} setCausa={setCausa}/>
 			</div>
 		</li>
 	);

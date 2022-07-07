@@ -1,10 +1,19 @@
+import { useState, useEffect } from 'react';
 
 import '../../Styles/tables.css'
 
-const RenderBody = ({data,setCausa}) => {
+const RenderBody = ({data,setCausa, onFetch}) => {
+const [clicked, setClicked] = useState(false)
+
+
+  useEffect(() => {
+  onFetch()
+}, [clicked])
+
 
   const seleccionar = (causa) => {
-		setCausa(causa);
+    setCausa(causa);
+    setClicked(true)
 	};
 
 
