@@ -6,7 +6,7 @@ import LoadingSpinner from '../Spinner/LoadingSpinner'
 
 import UserInput from '../UserInput';
 
-import Main from '../Main/Main';
+import Main from '../Main/main';
 
 import '../../Styles/styles.css';
 
@@ -52,7 +52,12 @@ export default function Home() {
 					</div>
 				</div>
 					<div className={isLoading ? 'display-none' : ''}>
-						<Main dni={dni} onFetch={executeScroll} onLoading={setIsLoading} onErrorFetch={setErrorFetch} onErrorData={setErrorData}/>
+						<Main dni={dni} 
+						      onFetch={executeScroll} 
+							  onLoading={setIsLoading} 
+							  onErrorFetch={setErrorFetch} 
+							  onErrorData={setErrorData}
+						/>
 					</div>
 					<div ref={myRef}></div>
 			</div>

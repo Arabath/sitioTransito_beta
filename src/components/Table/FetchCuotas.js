@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react'
 import { faPrint, faMoneyBill, faBackwardStep } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SwitchToggle from '../components/SwitchToggle/SwitchToggle';
-import '../Styles/tables.css'
+import SwitchToggle from '../SwitchToggle/SwitchToggle';
+import '../../Styles/tables.css'
 
 export default function FetchCuotas({causa}) {
 	const [value, setValue] = useState(false);

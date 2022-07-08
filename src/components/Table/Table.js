@@ -1,7 +1,7 @@
 import RenderHeader from "../Accordion/RenderHeader";
 import RenderBody from "../Accordion/RenderBody";
 
-import FetchCuotas from '../../API/FetchCuotas'
+import FetchCuotas from './FetchCuotas'
 
 import '../../Styles/tables.css'
 

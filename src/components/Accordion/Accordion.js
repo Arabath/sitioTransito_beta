@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 
-import FetchMulta from '../../API/FetchMulta'
+import Services from '../../services/Services'
 
 import AccordionItem from '../Accordion/AccordionItem'
 
@@ -14,22 +14,33 @@ const Accordion = ({dni,onFetch,onLoading,onErrorFetch,onErrorData}) => {
   const faqs = [
   {
     question: 'Deuda del contribuyente',
-    answer: <FetchMulta dni={dni} onFetchData={setData} onLoading={onLoading} onErrorFetch={onErrorFetch} onErrorData={onErrorData} />,
+    answer: <Services dni={dni} 
+                      onFetchData={setData} 
+                      onLoading={onLoading} 
+                      onErrorFetch={onErrorFetch} 
+                      onErrorData={onErrorData} 
+            />,
   },
 ];
 
 
 TODO:
-useEffect(() => {
-  console.log(dni)
-}, [dni]);
+// useEffect(() => {
+//   console.log(dni)
+// }, [dni]);
 
 
   return (
 		<div>
       <ul className='accordion' id='home'>
         {faqs.map((faq, index) => (
-          <AccordionItem key={index} faq={faq} onFetch={onFetch} data={data} causa={causa} setCausa={setCausa} />
+          <AccordionItem key={index} 
+                         faq={faq} 
+                         onFetch={onFetch} 
+                         data={data} 
+                         causa={causa} 
+                         setCausa={setCausa} 
+          />
         ))}
       </ul>
 		</div>

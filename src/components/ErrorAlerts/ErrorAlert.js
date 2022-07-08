@@ -11,7 +11,7 @@ const ErrorAlert = () => {
   return (
     <div className='registerErrorOverlay'>
         <div className='errorAlert'>
-            Registro INEXISTENTE!!!
+            Registro Inexistente
             <button className='refresh-btn'
 									onClick={refreshPage}>
 									Volver

@@ -26,7 +26,12 @@ const AccordionItem = ({ faq, data, causa, setCausa, onFetch}) => {
 				style={clicked ? { height: 'auto' } : { height: '0' }}
 			>
 				<div className='answer'>{answer}</div>
-			<Table onFetch={onFetch} data={data} causa={causa} setCausa={setCausa}/>
+			
+			  	<Table onFetch={onFetch} 
+				       data={data} 
+				       causa={causa} 
+				       setCausa={setCausa}
+			  	/>
 			</div>
 		</li>
 	);
