@@ -1,5 +1,3 @@
-import {useEffect} from 'react'
-
 import Accordion from '../Accordion/Accordion';
 
 const Main = ({dni,onFetch, onLoading,onErrorFetch,onErrorData}) =>{

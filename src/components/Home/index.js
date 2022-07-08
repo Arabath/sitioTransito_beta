@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 
 import ErrorAlert from '../ErrorAlerts/ErrorAlert';
 import ErrorFetch from '../ErrorAlerts/ErrorFetch';
