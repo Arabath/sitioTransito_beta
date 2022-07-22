@@ -3,6 +3,7 @@ import { faPrint, faMoneyBill, faBackwardStep } from '@fortawesome/free-solid-sv
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SwitchToggle from '../SwitchToggle/SwitchToggle';
 import '../../Styles/tables.css'
+import { Epagos } from '../../services/Epagos';
 
 export default function FetchCuotas({causa}) {
 	const [value, setValue] = useState(false);
@@ -88,9 +89,10 @@ export default function FetchCuotas({causa}) {
 					<FontAwesomeIcon className="print-icon" icon={faPrint} /> Imprimir
 				</button>
 
-				<button className="btn-table">
+				{/* <button className="btn-table">
 					<FontAwesomeIcon className="pay-icon" icon={faMoneyBill} /> Pagar
-				</button>
+				</button> */}
+				<Epagos />
 			</div>
 		</>
 	)

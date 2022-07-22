@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import Home from './components/Home';
 
 import './background.css'
+// import { Epagos } from './services/Epagos';
 
 import './Styles/accordion.css';
 import './Styles/styles.css'
@@ -16,5 +17,6 @@ const root = createRoot(rootElement);
 root.render(
 	<StrictMode>
 		<Home />
+		{/* <Epagos /> */}
 	</StrictMode>
 );

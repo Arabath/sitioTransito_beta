@@ -27,4 +27,4 @@ export default function Services({ dni, onFetchData, onLoading, onErrorFetch,onE
 		getData(dni);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [dni]);
-}
+} 
