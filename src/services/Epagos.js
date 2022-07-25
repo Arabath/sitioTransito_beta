@@ -15,8 +15,8 @@ export const Epagos = () => {
     var detalle_op = [
         {
           id_item: 0,
-          desc_item: "multa",
-          monto_item: 500,
+          desc_item: "infracción",
+          monto_item: 700,
           cantidad_item: 1
         }
       ];
@@ -49,8 +49,8 @@ export const Epagos = () => {
       <input id="token" type="hidden" name="token" value="token" />
       <input type="hidden" name="numero_operacion" value="100000000" />
       <input type="hidden" name="id_moneda_operacion" value="1" />
-      <input type="hidden" id="valor" name="monto_operacion" value="500" />
-      <input type="hidden" id="codificar" name="detalle_operacion" value="" />
+      <input type="hidden" id="valor" name="monto_operacion" value="700" />
+      <input type="hidden" id="codificar" name="detalle_operacion" value={detalle_op.desc_item} />
       <input type="hidden" name="detalle_operacion_visible" value="1" />
       <input type="hidden" name="ok_url" value="https://postsandbox.epagos.com.ar/tests/ok.php"/>
       <input type="hidden" name="error_url" value="https://postsandbox.epagos.com.ar/tests/error.php"/>

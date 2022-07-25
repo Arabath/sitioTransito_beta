@@ -1,0 +1,45 @@
+ Pasos:
+ 
+ 1) Debe tomar el/los checkbox y sumar los montos. Ese monto 
+    en formato string tiene que ser ingresado por el value del input "monto_operacion" 
+ 
+ 
+ //20468120179
+ 
+ <input type="hidden" id="valor" name="monto_operacion" value="500" />
+ 
+ 
+ Observaciones:
+ --------------
+	
+	Chrome: No reconoce el endpoint o algún problema de permisos al ingresar un DNI. 
+			Genera un "Error de Conexión" (net::ERR_CERT_AUTHORITY_INVALID)
+	
+	Firefox: Corre la app sin problemas, pero Epagos genera "Token inválido (token)"
+	
+	Epagos: Con parametros hardcodeados de prueba: OK y si es inyectado como componente dentro del index.js principal.
+			
+			Inyectado dentro de FetchCuotas.js genera "Token inválido (token)"
+	
+
+Corregir:
+---------
+	
+	1) Chrome no reconoce Endpoint.
+	
+	2) Epagos no reconoce Token si esta como componente dentro de FetchCuotas.js
+	
+Search:
+-------
+
+	- self-signed SSL certificate
+	
+	- (net::ERR_CERT_AUTHORITY_INVALID) ¿Porque afecta en localhost?, 
+	
+	How to Fix the NET ERR_CERT_AUTHORITY_INVALID Error in Google Chrome (For Website Owners)
+
+
+	There’s only one solution in either case to address this ERR_CERT_AUTHORITY_INVALID issue in Chrome, 
+	and that’s to get an SSL certificate from a trusted certificate authority (CA). 
+	Getting an SSL certificate from a trusted CA will make browsers (including Chrome) trust your website.
+	
