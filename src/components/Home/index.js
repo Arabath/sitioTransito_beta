@@ -43,8 +43,6 @@ export default function Home() {
 					<div  className='subtitle-section'>
 						<h3 className='logo-subtitulo'>CONSULTA DE INFRACCIONES MUNICIPALES</h3>
 
-						<p>20468120179</p>
-
 						<UserInput onChangeInput={mainInputChangeHandler} />
 
 						{isLoading && <LoadingSpinner />}

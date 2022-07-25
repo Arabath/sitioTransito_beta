@@ -23,13 +23,6 @@ const Accordion = ({dni,onFetch,onLoading,onErrorFetch,onErrorData}) => {
   },
 ];
 
-
-TODO:
-// useEffect(() => {
-//   console.log(dni)
-// }, [dni]);
-
-
   return (
 		<div>
       <ul className='accordion' id='home'>

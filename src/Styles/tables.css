@@ -71,6 +71,32 @@ table {
     color: white;
 }
 
+/* Boton EPAGOS */
+
+.btn-epagos-cont {
+    margin-top: auto;
+    display: flex;
+    flex-direction:column;
+    margin-top: -23px;
+}
+
+.btn-table-epagos{
+    padding: 11px;
+    background-color: #929ce9;
+    width: 90px;
+    border-radius: 4px;
+    border: solid 1px #f4f5f8;
+    color: #ffff;
+    transition-duration: 0.4s;
+}
+
+.btn-table-epagos:hover {
+    background-color: #9816f4; 
+    color: white;
+}
+
+/* Boton EPAGOS */
+
 .tabla-deuda, .tabla-cuotas {
     background-color:#ececec;
     font-size: 14px;

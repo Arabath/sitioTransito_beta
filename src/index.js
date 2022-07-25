@@ -16,6 +16,7 @@ const root = createRoot(rootElement);
 
 root.render(
 	<StrictMode>
+		<p>20468120179</p>
 		<Home />
 		{/* <Epagos /> */}
 	</StrictMode>

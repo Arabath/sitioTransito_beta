@@ -87,12 +87,13 @@ export default function FetchCuotas({causa}) {
 
 				<button className="btn-table">
 					<FontAwesomeIcon className="print-icon" icon={faPrint} /> Imprimir
-				</button>
-
-				{/* <button className="btn-table">
-					<FontAwesomeIcon className="pay-icon" icon={faMoneyBill} /> Pagar
-				</button> */}
-				<Epagos />
+				</button>	
+				
+	
+				{/* COMPONENTE BOTON EPAGOS */}
+				<div className="btn-epagos-cont">
+					<Epagos />
+				</div>
 			</div>
 		</>
 	)
