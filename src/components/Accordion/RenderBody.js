@@ -6,8 +6,9 @@ const RenderBody = ({data,setCausa, onFetch}) => {
 const [clicked, setClicked] = useState(false)
 
 
-  useEffect(() => {
+useEffect(() => {
   onFetch()
+  // eslint-disable-next-line 
 }, [clicked])
 
 

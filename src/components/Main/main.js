@@ -1,7 +1,7 @@
 import Accordion from '../Accordion/Accordion';
 
 const Main = ({dni,onFetch, onLoading,onErrorFetch,onErrorData}) =>{
-
+// eslint-disable-next-line
   { if(dni){
     return (
       <div>

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { faPrint, faMoneyBill, faBackwardStep } from '@fortawesome/free-solid-svg-icons';
+import { faPrint, faBackwardStep } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SwitchToggle from '../SwitchToggle/SwitchToggle';
 import '../../Styles/tables.css'
@@ -89,11 +89,11 @@ export default function FetchCuotas({causa}) {
 					<FontAwesomeIcon className="print-icon" icon={faPrint} /> Imprimir
 				</button>	
 				
-	
 				{/* COMPONENTE BOTON EPAGOS */}
 				<div className="btn-epagos-cont">
 					<Epagos />
 				</div>
+
 			</div>
 		</>
 	)
