@@ -20,7 +20,7 @@ export default function FetchCuotas({causa}) {
 	
 	const [value, setValue] = useState(false);
 
-	// const refInput = useRef([]);
+	const refInput = useRef([]);
 
 		//renderizado de header tabla
 	const renderHeader = () => {
