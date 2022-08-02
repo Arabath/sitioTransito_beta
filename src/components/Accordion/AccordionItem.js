@@ -3,7 +3,7 @@ import { useRef } from 'react';
 
 import Table from '../Table/Table'
 
-const AccordionItem = ({ faq, data, causa, setCausa, onFetch}) => {
+const AccordionItem = ({ faq, data, causa, setCausa, onFetch, newData}) => {
 	const [clicked, setClicked] = useState(true);
 	const contentEl = useRef();
 
@@ -31,6 +31,7 @@ const AccordionItem = ({ faq, data, causa, setCausa, onFetch}) => {
 				       data={data} 
 				       causa={causa} 
 				       setCausa={setCausa}
+					   newData={newData}
 			  	/>
 			</div>
 		</li>

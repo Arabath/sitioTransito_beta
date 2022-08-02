@@ -1,7 +1,7 @@
 import React from 'react'
 import $ from "jquery"
 import '../Styles/tables.css'
-export const Epagos = () => {
+export const Epagos = ({description, totalValue}) => {
     
     var paramsSandbox = {
         id_usuario: "74",
@@ -15,8 +15,8 @@ export const Epagos = () => {
     var detalle_op = [
         {
           id_item: 0,
-          desc_item: "infracción", //referencia donde tiene que traer desc_item desde el checkbox.
-          monto_item: 700,
+          desc_item: `${description}`, //referencia donde tiene que traer desc_item desde el checkbox.
+          monto_item: `${totalValue}`,
           cantidad_item: 1
         }
       ];
@@ -38,7 +38,7 @@ export const Epagos = () => {
           console.log(error);
         },
       });
-    
+        
 
   return (
     <div>
@@ -50,7 +50,7 @@ export const Epagos = () => {
       <input id="token" type="hidden" name="token" value="token" />
       <input type="hidden" name="numero_operacion" value="100000000" />
       <input type="hidden" name="id_moneda_operacion" value="1" />
-      <input type="hidden" id="valor" name="monto_operacion" value="700" />
+      <input type="hidden" id="valor" name="monto_operacion" value={detalle_op[0].monto_item} />
       <input type="hidden" id="codificar" name="detalle_operacion" value={detalle_op[0].desc_item} />
       <input type="hidden" name="detalle_operacion_visible" value="1" />
       <input type="hidden" name="ok_url" value="https://postsandbox.epagos.com.ar/tests/ok.php"/>

@@ -5,7 +5,7 @@ import FetchCuotas from './FetchCuotas'
 
 import '../../Styles/tables.css'
 
-const Table = ({data,causa,setCausa, onFetch}) => {
+const Table = ({data,causa,setCausa, onFetch, newData}) => {
 
   return(
 		<>
@@ -44,7 +44,7 @@ const Table = ({data,causa,setCausa, onFetch}) => {
 			<br></br>
 
       <div>
-			{causa === '' ? null : <FetchCuotas causa={causa} />}
+			{causa === '' ? null : <FetchCuotas causa={causa} newData={newData} />}
       </div>
 		</>
   )

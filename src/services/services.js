@@ -1,33 +1,29 @@
 import { useEffect } from 'react';
 import axios from 'axios';
-// const express = require('express');
-// const cors = require('cors');
 
-// const app = express()
-// app.use(cors())
-
-
-
-
-export default function Services({ dni, onFetchData, onLoading, onErrorFetch,onErrorData}) {
+function Services({ dni, onFetchData, onLoading, onErrorFetch,onErrorData}) {
 
 	const getData = async (dni) => {
+		// Creamos nuevo array y en este array solo almacenamos lo que necesitamos
+		// descripcion y total
+
+
 		if (dni) {
 			try {
 				let url = `http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/${dni}`;
-				//`http://testiis01.campana.gov.ar/campana/api/Rentas/Causas/${dni}`
 				onLoading(true); // After spinner load
 				const response = await axios.get(url);
 				if (response.data.length === 0 ){
 					onErrorFetch(true)
 				}else{
 					console.log("Exito");
+
 					onFetchData(response.data)
 					onLoading(false)
 					}
 			} catch (err) {
 				onErrorData(true)
-      	onLoading(false); //hide the loading spinner as the API has already responded.
+      			onLoading(false); //hide the loading spinner as the API has already responded.
 			}
 		}
 	};
@@ -37,3 +33,5 @@ export default function Services({ dni, onFetchData, onLoading, onErrorFetch,onE
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [dni]);
 } 
+
+export default Services

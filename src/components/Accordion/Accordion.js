@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Services from '../../services/Services'
 
@@ -9,6 +9,19 @@ import '../../Styles/accordion.css'
 const Accordion = ({dni,onFetch,onLoading,onErrorFetch,onErrorData}) => {
   const [data, setData] = useState([]);
   const [causa, setCausa] = useState('')
+  const [newData, setNewData] = useState([])
+
+  const filteredArray = []
+  
+  useEffect(() => {
+  data.map((item,index) => {
+    filteredArray.push({
+        description: item.descripcion, 
+        valor: item.cuotas[index].total})
+  })
+  setNewData(filteredArray)
+  console.log(newData)
+}, [data])
 
 
   const faqs = [
@@ -32,7 +45,8 @@ const Accordion = ({dni,onFetch,onLoading,onErrorFetch,onErrorData}) => {
                          onFetch={onFetch} 
                          data={data} 
                          causa={causa} 
-                         setCausa={setCausa} 
+                         setCausa={setCausa}
+                         newData={newData}
           />
         ))}
       </ul>

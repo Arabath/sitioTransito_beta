@@ -6,6 +6,8 @@ import '../../Styles/tables.css'
 import { Epagos } from '../../services/Epagos';
 
 export default function FetchCuotas({causa}) {
+
+
 	const [value, setValue] = useState(false);
 
 	const refInput = useRef([]);
@@ -34,6 +36,7 @@ export default function FetchCuotas({causa}) {
 	//renderizado de body tabla
 	const renderBody = () => {
 		return causa.cuotas.map((item, index) => {
+			
 
 			// Parsing de fecha, excluye hora
 			let formattedDate = new Date(item.vencimiento)
@@ -53,6 +56,7 @@ export default function FetchCuotas({causa}) {
 					<td>${item.total}</td>
 					<td>{formattedDate}</td>
 				</tr>
+				
 			)
 		})
 	}
@@ -91,7 +95,7 @@ export default function FetchCuotas({causa}) {
 				
 				{/* COMPONENTE BOTON EPAGOS */}
 				<div className="btn-epagos-cont">
-					<Epagos />
+					<Epagos description={'multa'} totalValue={180}/>
 				</div>
 
 			</div>
