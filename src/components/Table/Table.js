@@ -7,6 +7,8 @@ import '../../Styles/tables.css'
 
 const Table = ({data,causa,setCausa, onFetch, newData}) => {
 
+  console.log(data)
+
   return(
 		<>
 			<table >
@@ -44,7 +46,7 @@ const Table = ({data,causa,setCausa, onFetch, newData}) => {
 			<br></br>
 
       <div>
-			{causa === '' ? null : <FetchCuotas causa={causa} newData={newData} />}
+			{causa === '' ? null : <FetchCuotas causa={causa} newData={newData}/>}
       </div>
 		</>
   )

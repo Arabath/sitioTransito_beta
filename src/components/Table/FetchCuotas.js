@@ -7,7 +7,17 @@ import { Epagos } from '../../services/Epagos';
 
 export default function FetchCuotas({causa}) {
 
+	//# Detalle de descripcion de la causa
+	const descripcion = causa.descripcion
+	//console.log(descripcion)
+	//console.log(causa)
 
+	//# Array filtrado con todos los value de los checkbox checked
+	const cuotasSelected = [100,200,300,400]
+
+	////# Funcion que sumtodos los indices del array cuotasSelected a
+	const finalValue = cuotasSelected.reduce((x,y)=> x+y)
+	
 	const [value, setValue] = useState(false);
 
 	const refInput = useRef([]);
@@ -36,6 +46,8 @@ export default function FetchCuotas({causa}) {
 	//renderizado de body tabla
 	const renderBody = () => {
 		return causa.cuotas.map((item, index) => {
+
+			console.log(causa.descripcion)
 			
 
 			// Parsing de fecha, excluye hora
@@ -95,7 +107,7 @@ export default function FetchCuotas({causa}) {
 				
 				{/* COMPONENTE BOTON EPAGOS */}
 				<div className="btn-epagos-cont">
-					<Epagos description={'multa'} totalValue={180}/>
+					<Epagos description={descripcion} totalValue={finalValue}/>
 				</div>
 
 			</div>
